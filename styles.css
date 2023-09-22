@@ -37,6 +37,7 @@ h1 {
 #calDisplay h1 {
     margin: 0;
     padding-top: 80px;
+    font-size: 40px;
 }
 
 /* Calculator numpad */
@@ -54,7 +55,7 @@ h1 {
 }
 
 .button {
-    font-size: 40px;
+    font-size: 35px;
     margin: 0;
     padding: 0;
     width: 112.5px;
