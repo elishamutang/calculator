@@ -33,3 +33,26 @@ function operate(first, operator, second) {
 };
 
 console.log(operate(1,"+",3));
+
+// Update calculator display
+
+let calDisplay = document.getElementById("calDisplay");
+
+let buttons = document.querySelectorAll(".button");
+
+buttons.forEach((button) => {
+    button.addEventListener("mousedown", function(event) {
+        let displayText = document.createElement("h2");
+        displayText.className = "display";
+        displayText.innerHTML = event.target.textContent;
+        calDisplay.append(displayText);
+
+        if(event.target.textContent == "Clear") {
+            calDisplay.innerHTML = "";
+        }
+
+        if(event.target.textContent == "Del") {
+            console.log("del");
+        }
+    })
+})
