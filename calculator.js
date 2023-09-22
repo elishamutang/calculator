@@ -40,8 +40,8 @@ console.log(operate(1,"+",3));
 
 let calBody = document.getElementById("calBody");
 
-// Available numpad width of (400-80)px
-const rows = (400-80)/80;
+// Available numpad width of 400px
+const rows = 400/80;
 
 for(let i=0; i<rows; i++) {
     let calNumpad = document.createElement("div");
