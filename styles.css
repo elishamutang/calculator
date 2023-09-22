@@ -17,7 +17,7 @@ h1 {
 
 /* Calculator body */
 #calBody {
-    border-radius: 30px;
+    border-radius: 20px;
     width: 450px;
     height: 600px;
     background-color: #61677A;
@@ -44,4 +44,9 @@ h1 {
     width: inherit;
     height: 80px;
     border: 2px solid red;
+}
+
+.numpad:last-child {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
 }
