@@ -11,11 +11,26 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* Calculator container */
-#calculator {
-    width: 550px;
-    height: 550px;
-    border: 2px solid red;
-    background-color: grey;
-    margin: 80px auto;
+/* Calculator body */
+#calBody {
+    border-radius: 30px;
+    width: 450px;
+    height: 600px;
+    background-color: #61677A;
+    margin: 60px auto;
+}
+
+#calDisplay {
+    width: 450px;
+    height: 200px;
+    border: none;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background-color: #D8D9DA;
+    text-align: center;
+}
+
+#calDisplay h1 {
+    margin: 0;
+    padding-top: 80px;
 }
