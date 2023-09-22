@@ -6,3 +6,4 @@ HTML requirements:
 - Add, subtract, multiply, division function buttons on calculator.
 - Clear button.
 - Equals button.
+- Delete (or backspace) button.
