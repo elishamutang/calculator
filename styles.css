@@ -44,9 +44,19 @@ h1 {
     width: inherit;
     height: 80px;
     border: 2px solid black;
+    display: flex;
+    align-items: center;
 }
 
 .numpad:last-child {
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
+}
+
+.button {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    width: 112.5px;
+    text-align: center;
 }
