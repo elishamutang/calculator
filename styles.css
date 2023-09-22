@@ -11,6 +11,7 @@ body {
 
 h1 {
     padding-top: 20px;
+    padding-left: 20px;
     margin: 0;
     letter-spacing: 2px;
 }
@@ -32,11 +33,13 @@ h1 {
     border-top-right-radius: inherit;
     background-color: #E7F6F2;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #calDisplay h1 {
     margin: 0;
-    padding-top: 80px;
+    /* padding-top: 80px; */
     font-size: 40px;
 }
 
