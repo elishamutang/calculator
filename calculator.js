@@ -33,3 +33,18 @@ function operate(first, operator, second) {
 };
 
 console.log(operate(1,"+",3));
+
+
+// Calculator body
+// Generating numpad
+
+let calBody = document.getElementById("calBody");
+
+// Available numpad width of (400-80)px
+const rows = (400-80)/80;
+
+for(let i=0; i<rows; i++) {
+    let calNumpad = document.createElement("div");
+    calNumpad.className = "numpad";
+    calBody.append(calNumpad);
+}
