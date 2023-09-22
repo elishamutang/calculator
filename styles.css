@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -33,4 +37,11 @@ h1 {
 #calDisplay h1 {
     margin: 0;
     padding-top: 80px;
+}
+
+/* Calculator numpad */
+.numpad {
+    width: inherit;
+    height: 80px;
+    border: 2px solid red;
 }
