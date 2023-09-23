@@ -30,15 +30,30 @@ body {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
-#calDisplay h2 {
-    font-size: 30px;
-    letter-spacing: 8px;
+#opsDisplay h2 {
+    font-size: 25px;
+    letter-spacing: 3px;
     margin: 0;
     padding: 0;
-    width: 23px;
-    height: 50px;
+    /* width: 23px;
+    height: 50px; */
+}
+
+#opsDisplay {
+    border: 2px solid red;
+    display: flex;
+    height: 80px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    overflow: auto;
+}
+
+#totalDisplay {
+    border: 2px solid red;
+    height: 120px;
 }
 
 
