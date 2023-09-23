@@ -9,13 +9,6 @@ body {
     width: 100%;
 }
 
-h1 {
-    padding-top: 20px;
-    padding-left: 20px;
-    margin: 0;
-    letter-spacing: 2px;
-}
-
 /* Calculator body */
 #calBody {
     border-radius: 20px;
@@ -24,6 +17,8 @@ h1 {
     background-color: #A5C9CA;
     margin: 60px auto;
 }
+
+/* Calculator Display */
 
 #calDisplay {
     width: 450px;
@@ -37,11 +32,15 @@ h1 {
     flex-wrap: wrap;
 }
 
-#calDisplay h1 {
+#calDisplay h2 {
+    font-size: 30px;
+    letter-spacing: 8px;
     margin: 0;
-    /* padding-top: 80px; */
-    font-size: 40px;
+    padding: 0;
+    width: 23px;
+    height: 50px;
 }
+
 
 /* Calculator numpad */
 .numpad {
