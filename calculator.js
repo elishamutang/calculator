@@ -36,7 +36,7 @@ console.log(operate(1,"+",3));
 
 // Update calculator display
 
-let calDisplay = document.getElementById("calDisplay");
+let opsDisplay = document.getElementById("opsDisplay");
 
 let buttons = document.querySelectorAll(".button");
 
@@ -46,12 +46,12 @@ buttons.forEach((button) => {
         displayText.className = "display";
 
         if(event.target.textContent == "Clear") {
-            calDisplay.innerHTML = "";
+            opsDisplay.innerHTML = "";
         } else if(event.target.textContent == "Del") {
             let removeItem = document.querySelector(".display");
             removeItem.remove();
         } else {
-            calDisplay.append(displayText);
+            opsDisplay.append(displayText);
             displayText.innerHTML = event.target.textContent;
         }
     })
