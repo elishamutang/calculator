@@ -48,8 +48,7 @@ buttons.forEach((button) => {
         if(event.target.textContent == "Clear") {
             opsDisplay.innerHTML = "";
         } else if(event.target.textContent == "Del") {
-            let removeItem = document.querySelector(".display");
-            removeItem.remove();
+            opsDisplay.removeChild(opsDisplay.lastElementChild);
         } else {
             opsDisplay.append(displayText);
             displayText.innerHTML = event.target.textContent;
