@@ -36,8 +36,13 @@ console.log(operate(1,"+",3));
 
 // Update calculator display
 
+// Targets operations display
 let opsDisplay = document.getElementById("opsDisplay");
 
+// Targets running total display
+let totalDisplay = document.getElementById("totalDisplay");
+
+// Targets all buttons in calculator numpad
 let buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {
