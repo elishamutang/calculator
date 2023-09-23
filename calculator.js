@@ -44,15 +44,15 @@ buttons.forEach((button) => {
     button.addEventListener("mousedown", function(event) {
         let displayText = document.createElement("h2");
         displayText.className = "display";
-        displayText.innerHTML = event.target.textContent;
-        calDisplay.append(displayText);
 
         if(event.target.textContent == "Clear") {
             calDisplay.innerHTML = "";
-        }
-
-        if(event.target.textContent == "Del") {
-            console.log("del");
+        } else if(event.target.textContent == "Del") {
+            let removeItem = document.querySelector(".display");
+            removeItem.remove();
+        } else {
+            calDisplay.append(displayText);
+            displayText.innerHTML = event.target.textContent;
         }
     })
 })
