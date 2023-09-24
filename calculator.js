@@ -58,7 +58,7 @@ buttons.forEach((button) => {
             firstArr.splice(0, 1);
         } else if(event.target.textContent == "=") {
             if(operator == "+") {
-                const sum = add(firstArr);
+                sum = add(firstArr);
                 firstArr = [];
                 console.log(sum);
             }
