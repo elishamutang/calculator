@@ -30,7 +30,7 @@ function divide(arr) {
     return first/second;
 }
 
-// Declaring first number, operator and second number.
+// Initial declaration
 let firstNum, operator, secondNum;
 let firstArr = [];
 
@@ -60,7 +60,7 @@ function equalBtn() {
     }
 }
 
-// Update calculator display
+// Calculator display
 
 // Targets operations display
 let opsDisplay = document.getElementById("opsDisplay");
@@ -71,6 +71,7 @@ let totalDisplay = document.getElementById("totalDisplay");
 // Targets all buttons in calculator numpad
 let buttons = document.querySelectorAll(".button");
 
+// Links each button in numpad to do something
 buttons.forEach((button) => {
     button.addEventListener("mousedown", function(event) {
 
@@ -104,7 +105,7 @@ buttons.forEach((button) => {
             opsDisplay.append(displayText);
             firstNum = event.target.textContent;
             operate(firstNum);
-            
+
         }
     })
 })
