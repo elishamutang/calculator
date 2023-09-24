@@ -56,6 +56,18 @@ body {
 #totalDisplay {
     border: 2px solid red;
     height: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+/* Total display */
+
+#total {
+    margin: 0;
+    margin-left: 50px;
+    padding: 0;
+    font-size: 50px;
 }
 
 /* Calculator numpad */
