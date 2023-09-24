@@ -48,6 +48,19 @@ function operate(firstNo) {
     }
 };
 
+// Clear button function
+
+function clearBtn() {
+    if(operator == "+") {
+        result = add(firstArr);
+        firstArr = [];
+        operator = [];
+        console.log(result);
+        opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
+        totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
+    }
+}
+
 // Update calculator display
 
 // Targets operations display
@@ -72,14 +85,7 @@ buttons.forEach((button) => {
             opsDisplay.removeChild(opsDisplay.lastElementChild);
             firstArr.splice(0, 1);
         } else if(event.target.textContent == "=") {
-            if(operator == "+") {
-                result = add(firstArr);
-                firstArr = [];
-                operator = [];
-                console.log(result);
-                opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
-                totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
-            }
+            clearBtn(event);
         } else {
             if(opsDisplay.innerHTML.includes('result')) {
                 opsDisplay.innerHTML = '';
