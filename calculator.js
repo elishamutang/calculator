@@ -20,14 +20,15 @@ let firstNum, operator, secondNum;
 let firstArr = [];
 
 // Operate function: takes an operator and 2 numbers and calls one of the above functions
-function operate(firstNum) {
-    firstArr.push(firstNum);
+function operate(firstNo) {
+    firstArr.push(firstNo);
     console.log(firstArr);
     if(firstArr.includes("+")) {
         firstArr.findIndex(function(current, idx) {
             if(current == "+") {
                 operator = firstArr.splice(idx, 1);
-                return firstArr;
+                console.log(firstArr);
+                return operator;
             }
         });
     }
@@ -60,7 +61,7 @@ buttons.forEach((button) => {
                 sum = add(firstArr);
                 firstArr = [];
                 console.log(sum);
-                opsDisplay.innerHTML = `<h2 class='display result'>${sum}</h2>`;
+                opsDisplay.innerHTML = `<h2 class='result'>${sum}</h2>`;
             }
         } else {
             opsDisplay.append(displayText);
