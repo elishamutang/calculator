@@ -78,7 +78,7 @@ buttons.forEach((button) => {
                 operator = [];
                 console.log(result);
                 opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
-                totalDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
+                totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
             }
         } else {
             if(opsDisplay.innerHTML.includes('result')) {
