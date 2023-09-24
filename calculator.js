@@ -73,28 +73,38 @@ let buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {
     button.addEventListener("mousedown", function(event) {
+
         let displayText = document.createElement("h2");
         displayText.className = "display";
 
         if(event.target.textContent == "Clear") {
+
             opsDisplay.innerHTML = "";
             totalDisplay.innerHTML = "";
             firstArr = [];
+
         } else if(event.target.textContent == "Del") {
+
             opsDisplay.removeChild(opsDisplay.lastElementChild);
             firstArr.splice(0, 1);
+
         } else if(event.target.textContent == "=") {
+
             equalBtn(event);
             opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
             totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
+
         } else {
+
             if(opsDisplay.innerHTML.includes('result')) {
                 opsDisplay.innerHTML = '';
             }
+
             displayText.innerHTML = event.target.textContent;
             opsDisplay.append(displayText);
             firstNum = event.target.textContent;
             operate(firstNum);
+            
         }
     })
 })
