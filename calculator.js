@@ -73,16 +73,19 @@ buttons.forEach((button) => {
             firstArr.splice(0, 1);
         } else if(event.target.textContent == "=") {
             if(operator == "+") {
-                sum = add(firstArr);
+                result = add(firstArr);
                 firstArr = [];
                 operator = [];
-                console.log(sum);
-                opsDisplay.innerHTML = `<h2 class='result'>${sum}</h2>`;
-                totalDisplay.innerHTML = `<h2 class='result'>${sum}</h2>`;
+                console.log(result);
+                opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
+                totalDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
             }
         } else {
-            opsDisplay.append(displayText);
+            if(opsDisplay.innerHTML.includes('result')) {
+                opsDisplay.innerHTML = '';
+            }
             displayText.innerHTML = event.target.textContent;
+            opsDisplay.append(displayText);
             firstNum = event.target.textContent;
             operate(firstNum);
         }
