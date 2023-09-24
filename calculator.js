@@ -76,6 +76,7 @@ buttons.forEach((button) => {
                 firstArr = [];
                 console.log(sum);
                 opsDisplay.innerHTML = `<h2 class='result'>${sum}</h2>`;
+                totalDisplay.innerHTML = `<h2 class='result'>${sum}</h2>`;
             }
         } else {
             opsDisplay.append(displayText);
