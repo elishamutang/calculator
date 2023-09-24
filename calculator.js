@@ -50,14 +50,13 @@ function operate(firstNo) {
 
 // Clear button function
 
-function clearBtn() {
+function equalBtn() {
     if(operator == "+") {
         result = add(firstArr);
         firstArr = [];
         operator = [];
         console.log(result);
-        opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
-        totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
+        return result;
     }
 }
 
@@ -85,7 +84,9 @@ buttons.forEach((button) => {
             opsDisplay.removeChild(opsDisplay.lastElementChild);
             firstArr.splice(0, 1);
         } else if(event.target.textContent == "=") {
-            clearBtn(event);
+            equalBtn(event);
+            opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
+            totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
         } else {
             if(opsDisplay.innerHTML.includes('result')) {
                 opsDisplay.innerHTML = '';
