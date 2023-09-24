@@ -32,8 +32,6 @@ function operate(first, operator, second) {
     return result;
 };
 
-console.log(operate(1,"+",3));
-
 // Update calculator display
 
 // Targets operations display
@@ -57,6 +55,7 @@ buttons.forEach((button) => {
         } else {
             opsDisplay.append(displayText);
             displayText.innerHTML = event.target.textContent;
+            console.log(event.target.textContent);
         }
     })
 })
