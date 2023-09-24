@@ -66,6 +66,7 @@ buttons.forEach((button) => {
 
         if(event.target.textContent == "Clear") {
             opsDisplay.innerHTML = "";
+            totalDisplay.innerHTML = "";
             firstArr = [];
         } else if(event.target.textContent == "Del") {
             opsDisplay.removeChild(opsDisplay.lastElementChild);
@@ -74,6 +75,7 @@ buttons.forEach((button) => {
             if(operator == "+") {
                 sum = add(firstArr);
                 firstArr = [];
+                operator = [];
                 console.log(sum);
                 opsDisplay.innerHTML = `<h2 class='result'>${sum}</h2>`;
                 totalDisplay.innerHTML = `<h2 class='result'>${sum}</h2>`;
