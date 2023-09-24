@@ -1,6 +1,21 @@
 // Arithmetic operations
 function add(arr) {
-    return parseInt(arr[0]) + parseInt(arr[1]);
+    arr.findIndex((current,idx) => {
+        if(current == "+") {
+            firstNum = arr.slice(0,idx);
+            secondNum = arr.slice(idx+1);
+        }
+    });
+    
+    if(firstNum.length > 1) {
+        firstNum = firstNum.join('');
+    }
+
+    if(secondNum.length > 1) {
+        secondNum = secondNum.join('');
+    }
+
+    return parseInt(firstNum) + parseInt(secondNum);
 }
 
 function subtract(arr) {
@@ -24,10 +39,9 @@ function operate(firstNo) {
     firstArr.push(firstNo);
     console.log(firstArr);
     if(firstArr.includes("+")) {
-        firstArr.findIndex(function(current, idx) {
+        firstArr.findIndex((current) => {
             if(current == "+") {
-                operator = firstArr.splice(idx, 1);
-                console.log(firstArr);
+                operator = current;
                 return operator;
             }
         });
