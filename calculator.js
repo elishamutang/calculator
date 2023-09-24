@@ -26,8 +26,7 @@ function operate(firstNum) {
     if(firstArr.includes("+")) {
         firstArr.findIndex(function(current, idx) {
             if(current == "+") {
-                operator = firstArr.splice(idx, 1)
-                console.log(operator);
+                operator = firstArr.splice(idx, 1);
                 return firstArr;
             }
         });
@@ -61,6 +60,7 @@ buttons.forEach((button) => {
                 sum = add(firstArr);
                 firstArr = [];
                 console.log(sum);
+                opsDisplay.innerHTML = `<h2 class='display result'>${sum}</h2>`;
             }
         } else {
             opsDisplay.append(displayText);
