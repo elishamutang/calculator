@@ -1,35 +1,37 @@
-// first, second (addition, subtraction, multiplication and division)
-function add(first, second) {
-    return first+second;
+// Arithmetic operations
+function add(arr) {
+    return parseInt(arr[0]) + parseInt(arr[1]);
 }
 
-function subtract(first, second) {
+function subtract(arr) {
     return first-second;
 }
 
-function multiply(first, second) {
+function multiply(arr) {
     return first*second;
 }
 
-function divide(first, second) {
+function divide(arr) {
     return first/second;
 }
 
 // Declaring first number, operator and second number.
 let firstNum, operator, secondNum;
+let firstArr = [];
 
 // Operate function: takes an operator and 2 numbers and calls one of the above functions
-function operate(first, operator, second) {
-    if(operator == "+") {
-        result = add(first, second);
-    } else if(operator == "-") {
-        result = subtract(first, second);
-    } else if(operator == "*") {
-        result = multiply(first, second);
-    } else {
-        result = divide(first, second);
+function operate(firstNum) {
+    firstArr.push(firstNum);
+    console.log(firstArr);
+    if(firstArr.includes("+")) {
+        firstArr.findIndex(function(current, idx) {
+            if(current == "+") {
+                operator = firstArr.splice(idx, 1)
+                console.log(operator);
+                return firstArr;
+            }
+        });
     }
-    return result;
 };
 
 // Update calculator display
@@ -50,12 +52,20 @@ buttons.forEach((button) => {
 
         if(event.target.textContent == "Clear") {
             opsDisplay.innerHTML = "";
+            firstArr = [];
         } else if(event.target.textContent == "Del") {
             opsDisplay.removeChild(opsDisplay.lastElementChild);
+        } else if(event.target.textContent == "=") {
+            if(operator == "+") {
+                const sum = add(firstArr);
+                firstArr = [];
+                console.log(sum);
+            }
         } else {
             opsDisplay.append(displayText);
             displayText.innerHTML = event.target.textContent;
-            console.log(event.target.textContent);
+            firstNum = event.target.textContent;
+            operate(firstNum);
         }
     })
 })
