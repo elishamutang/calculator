@@ -55,6 +55,7 @@ buttons.forEach((button) => {
             firstArr = [];
         } else if(event.target.textContent == "Del") {
             opsDisplay.removeChild(opsDisplay.lastElementChild);
+            firstArr.splice(0, 1);
         } else if(event.target.textContent == "=") {
             if(operator == "+") {
                 const sum = add(firstArr);
