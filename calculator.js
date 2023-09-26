@@ -119,18 +119,16 @@ buttons.forEach((button) => {
 
         } else {
 
-            // Numbers on calculator numpad.
+            // This section is for number keys on the keypad.
 
-            if(opsDisplay.innerHTML.includes('result')) {
-
-                opsDisplay.innerHTML = '';
-
-            } else if(opsDisplay.innerHTML.includes('firstOp')) {
+            // Resets opsDisplay
+            if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp')) {
 
                 opsDisplay.innerHTML = '';
 
             }
 
+            // Updates display when numbers are pressed
             displayText.innerHTML = event.target.textContent;
             opsDisplay.append(displayText);
 
