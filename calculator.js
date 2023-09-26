@@ -88,7 +88,6 @@ buttons.forEach((button) => {
 
             children.forEach((child) => child.setAttribute("class", "firstOp"));
 
-
         } else {
 
             if(opsDisplay.innerHTML.includes('result')) {
