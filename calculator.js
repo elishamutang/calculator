@@ -25,6 +25,8 @@ function divide(firstArr, secondNum) {
 
 }
 
+
+
 // Initial declaration
 let firstNum, operator, secondNum;
 let inputNum = [];
