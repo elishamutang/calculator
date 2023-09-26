@@ -1,33 +1,20 @@
 // Arithmetic operations
 function add(firstArr, secondNum) {
-    
-    if(firstArr.length > 1) {
-        firstArr = firstArr.join('');
-    }
-
-    if(secondNum.length > 1) {
-        secondNum = secondNum.join('');
-    }
 
     return parseInt(firstArr) + parseInt(secondNum);
+
 }
 
 function subtract(firstArr, secondNum) {
-
-    if(firstArr.length > 1) {
-        firstArr = firstArr.join('');
-    }
-
-    if(secondNum.length > 1) {
-        secondNum = secondNum.join('');
-    }
 
     return parseInt(firstArr) - parseInt(secondNum);
 
 }
 
-function multiply(arr) {
-    return first*second;
+function multiply(firstArr, secondNum) {
+
+    return parseInt(firstArr) * parseInt(secondNum);
+
 }
 
 function divide(arr) {
@@ -41,6 +28,16 @@ let inputNum = [];
 // Operate function: takes an operator and 2 numbers and calls one of the above functions
 function operate(firstNum, operator, secondNum) {
 
+    // If more than 1 element exists in array, join them.
+    if(firstNum.length > 1) {
+        firstNum = firstNum.join('');
+    }
+
+    if(secondNum.length > 1) {
+        secondNum = secondNum.join('');
+    }
+
+    // Selects the correct operation
     if(operator == "+") {
 
         console.log(firstNum, operator, secondNum);
@@ -51,6 +48,10 @@ function operate(firstNum, operator, secondNum) {
         console.log(firstNum, operator, secondNum);
         return subtract(firstNum, secondNum);
 
+    } else if(operator == "X") {
+
+        console.log(firstNum, operator, secondNum);
+        return multiply(firstNum, secondNum);
     }
 
 };
@@ -124,9 +125,6 @@ buttons.forEach((button) => {
             firstNum = event.target.textContent;
             inputNum.push(firstNum);
             console.log(inputNum);
-
-
-            operate(firstNum);
 
         }
     })
