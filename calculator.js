@@ -38,7 +38,6 @@ function operate(firstNum, operator, secondNum) {
 
 };
 
-
 // Calculator display
 
 // Targets operations display
