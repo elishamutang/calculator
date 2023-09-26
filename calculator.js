@@ -119,6 +119,8 @@ buttons.forEach((button) => {
 
         } else {
 
+            // Numbers on calculator numpad.
+
             if(opsDisplay.innerHTML.includes('result')) {
 
                 opsDisplay.innerHTML = '';
@@ -132,8 +134,8 @@ buttons.forEach((button) => {
             displayText.innerHTML = event.target.textContent;
             opsDisplay.append(displayText);
 
-            firstNum = event.target.textContent;
-            inputNum.push(firstNum);
+            lastNum = event.target.textContent;
+            inputNum.push(lastNum);
             console.log(inputNum);
 
         }
