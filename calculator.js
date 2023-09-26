@@ -12,8 +12,18 @@ function add(firstArr, secondNum) {
     return parseInt(firstArr) + parseInt(secondNum);
 }
 
-function subtract(arr) {
-    return first-second;
+function subtract(firstArr, secondNum) {
+
+    if(firstArr.length > 1) {
+        firstArr = firstArr.join('');
+    }
+
+    if(secondNum.length > 1) {
+        secondNum = secondNum.join('');
+    }
+
+    return parseInt(firstArr) - parseInt(secondNum);
+
 }
 
 function multiply(arr) {
@@ -32,8 +42,15 @@ let inputNum = [];
 function operate(firstNum, operator, secondNum) {
 
     if(operator == "+") {
+
         console.log(firstNum, operator, secondNum);
         return add(firstNum, secondNum);
+
+    } else if(operator == "-") {
+
+        console.log(firstNum, operator, secondNum);
+        return subtract(firstNum, secondNum);
+
     }
 
 };
@@ -78,7 +95,8 @@ buttons.forEach((button) => {
             opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
             totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
 
-        } else if(event.target.textContent == "+") {
+        } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "X" ||
+            event.target.textContent == "/") {
 
             operator = event.target.textContent;
             firstArr = inputNum;
