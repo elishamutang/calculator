@@ -7,6 +7,7 @@ Addition functionality seems to be working. Results are being shown on the calcu
 
 The following issues still persist:
 
-1. Operator sign is shown in the operations display. Ideally, operator should not be shown. 
-2. Addition should sum 2 operands, if an additional operand (3rd operand) is added, that will be automatically summed with
-    previous sum.
+1. Create new branch to experiment/test another method of performing addition/subtraction/division/multiplication etc.
+2. Add operator functionality, where user clicks on an "operator" (i.e +/-) and that sign is assigned to "operator" variable.
+3. From there, pass operator and operands to operate function.
+4. Operate function will call the correct operation based on the operator passed.

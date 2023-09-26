@@ -1,21 +1,15 @@
 // Arithmetic operations
-function add(arr) {
-    arr.findIndex((current,idx) => {
-        if(current == "+") {
-            firstNum = arr.slice(0,idx);
-            secondNum = arr.slice(idx+1);
-        }
-    });
+function add(firstArr, secondNum) {
     
-    if(firstNum.length > 1) {
-        firstNum = firstNum.join('');
+    if(firstArr.length > 1) {
+        firstArr = firstArr.join('');
     }
 
     if(secondNum.length > 1) {
         secondNum = secondNum.join('');
     }
 
-    return parseInt(firstNum) + parseInt(secondNum);
+    return parseInt(firstArr) + parseInt(secondNum);
 }
 
 function subtract(arr) {
@@ -32,33 +26,17 @@ function divide(arr) {
 
 // Initial declaration
 let firstNum, operator, secondNum;
-let firstArr = [];
+let inputNum = [];
 
 // Operate function: takes an operator and 2 numbers and calls one of the above functions
-function operate(firstNo) {
-    firstArr.push(firstNo);
-    console.log(firstArr);
-    if(firstArr.includes("+")) {
-        firstArr.findIndex((current) => {
-            if(current == "+") {
-                operator = current;
-                return operator;
-            }
-        });
-    }
-};
+function operate(firstNum, operator, secondNum) {
 
-// Clear button function
-
-function equalBtn() {
     if(operator == "+") {
-        result = add(firstArr);
-        firstArr = [];
-        operator = [];
-        console.log(result);
-        return result;
+        console.log(firstNum, operator, secondNum);
+        return add(firstNum, secondNum);
     }
-}
+
+};
 
 // Calculator display
 
@@ -82,28 +60,54 @@ buttons.forEach((button) => {
 
             opsDisplay.innerHTML = "";
             totalDisplay.innerHTML = "";
-            firstArr = [];
+            inputNum = [];
 
         } else if(event.target.textContent == "Del") {
 
             opsDisplay.removeChild(opsDisplay.lastElementChild);
-            firstArr.splice(0, 1);
+            inputNum.splice(0, 1);
 
         } else if(event.target.textContent == "=") {
 
-            equalBtn(event);
+            result = operate(firstArr, operator, inputNum);
+
+            firstArr = [];
+            inputNum = [];
+            operator = [];
+            
             opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
             totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
+
+        } else if(event.target.textContent == "+") {
+
+            operator = event.target.textContent;
+            firstArr = inputNum;
+            inputNum = [];
+
+            let children = Array.from(opsDisplay.children);
+
+            children.forEach((child) => child.setAttribute("class", "firstOp"));
 
         } else {
 
             if(opsDisplay.innerHTML.includes('result')) {
+
                 opsDisplay.innerHTML = '';
+
+            } else if(opsDisplay.innerHTML.includes('firstOp')) {
+
+                opsDisplay.innerHTML = '';
+
             }
 
             displayText.innerHTML = event.target.textContent;
             opsDisplay.append(displayText);
+
             firstNum = event.target.textContent;
+            inputNum.push(firstNum);
+            console.log(inputNum);
+
+
             operate(firstNum);
 
         }
