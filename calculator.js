@@ -38,17 +38,6 @@ function operate(firstNum, operator, secondNum) {
 
 };
 
-// Clear button function
-
-// function equalBtn() {
-//     if(operator == "+") {
-//         result = add(inputNum);
-//         inputNum = [];
-//         operator = [];
-//         console.log(result);
-//         return result;
-//     }
-// }
 
 // Calculator display
 
