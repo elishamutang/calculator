@@ -80,9 +80,6 @@ buttons.forEach((button) => {
 
         } else if(event.target.textContent == "+") {
 
-            console.log("+");
-            console.log(inputNum);
-
             operator = event.target.textContent;
             firstArr = inputNum;
             inputNum = [];
