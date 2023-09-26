@@ -17,8 +17,12 @@ function multiply(firstArr, secondNum) {
 
 }
 
-function divide(arr) {
-    return first/second;
+function divide(firstArr, secondNum) {
+
+    let divideResult = parseInt(firstArr) / parseInt(secondNum);
+    
+    return divideResult;
+
 }
 
 // Initial declaration
@@ -52,6 +56,12 @@ function operate(firstNum, operator, secondNum) {
 
         console.log(firstNum, operator, secondNum);
         return multiply(firstNum, secondNum);
+
+    } else if(operator == "/") {
+
+        console.log(firstNum, operator, secondNum);
+        return divide(firstNum, secondNum);
+
     }
 
 };
