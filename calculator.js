@@ -28,7 +28,8 @@ function divide(firstArr, secondNum) {
 
 
 // Initial declaration
-let operator;
+let operator = [];
+let lastOperator = [];
 let inputNum = [];
 let firstArr = [];
 let runningTotal = 0;
@@ -95,6 +96,8 @@ buttons.forEach((button) => {
             inputNum = [];
             firstArr = [];
             runningTotal = 0;
+            operator = [];
+            lastOperator = [];
 
         } else if(event.target.textContent == "Del") {
 
@@ -115,7 +118,6 @@ buttons.forEach((button) => {
         } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "X" ||
         event.target.textContent == "/") {
 
-            operator = event.target.textContent;
 
             let children = Array.from(opsDisplay.children);
 
@@ -125,7 +127,14 @@ buttons.forEach((button) => {
                     firstArr = runningTotal;
                     runningTotal = operate(firstArr, operator, inputNum);
                     opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+                } else if(operator.length !=0){
+                    lastOperator = operator;
+                    console.log(lastOperator);
+                    runningTotal = operate(firstArr, lastOperator, inputNum);
+                    opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 } else {
+                    operator = event.target.textContent;
+                    console.log(operator);
                     runningTotal = operate(firstArr, operator, inputNum);
                     opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 }
@@ -133,7 +142,8 @@ buttons.forEach((button) => {
                 console.log(runningTotal);
 
             } else {
-
+                
+                operator = event.target.textContent;
                 children.forEach((child) => child.setAttribute("class", "firstOp"));
 
             }
