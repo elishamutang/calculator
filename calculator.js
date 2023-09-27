@@ -28,8 +28,10 @@ function divide(firstArr, secondNum) {
 
 
 // Initial declaration
-let firstNum, operator, secondNum;
+let operator;
 let inputNum = [];
+let firstArr = [];
+let runningTotal = 0;
 
 // Operate function: takes an operator and 2 numbers and calls one of the above functions
 function operate(firstNum, operator, secondNum) {
@@ -91,6 +93,8 @@ buttons.forEach((button) => {
             opsDisplay.innerHTML = "";
             totalDisplay.innerHTML = "";
             inputNum = [];
+            firstArr = [];
+            runningTotal = 0;
 
         } else if(event.target.textContent == "Del") {
 
@@ -109,15 +113,33 @@ buttons.forEach((button) => {
             totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
 
         } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "X" ||
-            event.target.textContent == "/") {
+        event.target.textContent == "/") {
 
             operator = event.target.textContent;
-            firstArr = inputNum;
-            inputNum = [];
 
             let children = Array.from(opsDisplay.children);
 
-            children.forEach((child) => child.setAttribute("class", "firstOp"));
+            if(inputNum.length != 0 && firstArr.length != 0) {
+
+                if(runningTotal !=0) {
+                    firstArr = runningTotal;
+                    runningTotal = operate(firstArr, operator, inputNum);
+                    opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+                } else {
+                    runningTotal = operate(firstArr, operator, inputNum);
+                    opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+                }
+
+                console.log(runningTotal);
+
+            } else {
+
+                children.forEach((child) => child.setAttribute("class", "firstOp"));
+
+            }
+            
+            firstArr = inputNum;
+            inputNum = [];
 
         } else {
 
