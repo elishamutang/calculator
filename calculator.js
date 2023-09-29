@@ -107,7 +107,6 @@ buttons.forEach((button) => {
             if(runningTotal !=0) {
 
                 firstArr = runningTotal;
-                runningTotal = operate(firstArr, operator, inputNum);
 
             }
             
@@ -126,7 +125,6 @@ buttons.forEach((button) => {
             let children = Array.from(opsDisplay.children);
 
             // For when user performs chain operation (eg. 12+7-5*3 should equal 42)
-            // First-time running total is stored in firstArr. 
             if(inputNum.length != 0 && firstArr.length != 0) {
 
                 if(runningTotal !=0) {
@@ -134,13 +132,11 @@ buttons.forEach((button) => {
                     firstArr = runningTotal;
                     runningTotal = operate(firstArr, operator, inputNum);
 
-                } else {
-
-                    runningTotal = operate(firstArr, operator, inputNum);
-
                 }
 
+                runningTotal = operate(firstArr, operator, inputNum);
                 operator = event.target.textContent;
+
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 console.log(runningTotal);
 
@@ -154,29 +150,18 @@ buttons.forEach((button) => {
 
                         firstArr = runningTotal;
                         inputNum = runningTotal;
-
-                        runningTotal = operate(firstArr, operator, inputNum);
-
-                    } else {
-                        console.log("yes");
-
-                        firstArr = runningTotal;
-                        operator = event.target.textContent;
-
-                        runningTotal = operate(firstArr, operator, inputNum);
-
-                    }
                     
+                    }
 
                 } else {
 
                     inputNum = firstArr;
 
-                    runningTotal = operate(firstArr, operator, inputNum);
-
                 }
 
+                runningTotal = operate(firstArr, operator, inputNum);
                 operator = event.target.textContent;
+
                 console.log(runningTotal);
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
 
