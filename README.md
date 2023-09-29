@@ -9,7 +9,8 @@ This branch solved the following:
 The following questions still need to be answered/coded:
 
 1. Tweak Equals button. If user repeatedly presses Equals button, what should and should not happen?
-2. Tweak chain operations (make 23+7-20/x5 work) (Done)
+2. Tweak operator function. If user presses operators without inputting numbers OR if user presses operator first and then
+    followed by a number, what should happen?
 3. Floating numbers.
 
 
