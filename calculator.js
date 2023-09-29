@@ -29,8 +29,6 @@ function divide(firstArr, secondNum) {
 
 // Initial declaration (globals, need to avoid)
 let operator = [];
-let lastOperator = [];
-let newOperator = [];
 let inputNum = [];
 let firstArr = [];
 let runningTotal = 0;
@@ -58,7 +56,7 @@ function operate(firstNum, operator, secondNum) {
         console.log(firstNum, operator, secondNum);
         return subtract(firstNum, secondNum);
 
-    } else if(operator == "X") {
+    } else if(operator == "*") {
 
         console.log(firstNum, operator, secondNum);
         return multiply(firstNum, secondNum);
@@ -90,7 +88,7 @@ buttons.forEach((button) => {
         let displayText = document.createElement("h2");
         displayText.className = "display";
 
-        if(event.target.textContent == "Clear") {
+        if(event.target.textContent == "AC") {
 
             opsDisplay.innerHTML = "";
             totalDisplay.innerHTML = "";
@@ -98,8 +96,6 @@ buttons.forEach((button) => {
             firstArr = [];
             runningTotal = 0;
             operator = [];
-            lastOperator = [];
-            newOperator = [];
 
         } else if(event.target.textContent == "Del") {
 
@@ -117,37 +113,41 @@ buttons.forEach((button) => {
             opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
             totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
 
-        } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "X" ||
+        } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "*" ||
         event.target.textContent == "/") {
 
 
             let children = Array.from(opsDisplay.children);
 
+            // For when user performs chain operation (eg. 12+7-5*3 should equal 42)
+            // First time running total is stored in firstArr, 
             if(inputNum.length != 0 && firstArr.length != 0) {
 
-                if(runningTotal !=0 && newOperator.length != 0) {
+                if(runningTotal !=0) {
+
                     firstArr = runningTotal;
-                    runningTotal = operate(firstArr, newOperator, inputNum);
-                    newOperator = event.target.textContent;
-                    opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+                    runningTotal = operate(firstArr, operator, inputNum);
+
                 } else {
-                    newOperator = event.target.textContent;
-                    lastOperator = operator;
-                    console.log(`Last: ${lastOperator}, New: ${newOperator}`);
-                    runningTotal = operate(firstArr, lastOperator, inputNum);
-                    opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+
+                    runningTotal = operate(firstArr, operator, inputNum);
+
                 }
 
+                operator = event.target.textContent;
+                opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 console.log(runningTotal);
 
+            // For when user performs operation such as (23+7-20/x5 should equal 5)
             } else if(inputNum.length == 0 && firstArr.length != 0) {
 
                 firstArr = runningTotal;
                 inputNum = runningTotal;
-                runningTotal = operate(firstArr, newOperator, inputNum);
-                newOperator = event.target.textContent;
+                runningTotal = operate(firstArr, operator, inputNum);
+                operator = event.target.textContent;
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
 
+            // For first time operation (e.g 12+7 should equal 19)
             } else {
                 
                 operator = event.target.textContent;
