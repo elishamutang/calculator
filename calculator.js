@@ -27,7 +27,7 @@ function divide(firstArr, secondNum) {
 
 
 
-// Initial declaration
+// Initial declaration (globals, need to avoid)
 let operator = [];
 let lastOperator = [];
 let newOperator = [];
@@ -148,6 +148,7 @@ buttons.forEach((button) => {
 
             }
             
+            // Reset input. Everytime user enters number and press sign, numbers before sign is captured in firstArr.
             firstArr = inputNum;
             inputNum = [];
 
