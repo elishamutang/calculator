@@ -30,6 +30,7 @@ function divide(firstArr, secondNum) {
 // Initial declaration
 let operator = [];
 let lastOperator = [];
+let newOperator = [];
 let inputNum = [];
 let firstArr = [];
 let runningTotal = 0;
@@ -98,6 +99,7 @@ buttons.forEach((button) => {
             runningTotal = 0;
             operator = [];
             lastOperator = [];
+            newOperator = [];
 
         } else if(event.target.textContent == "Del") {
 
@@ -123,19 +125,16 @@ buttons.forEach((button) => {
 
             if(inputNum.length != 0 && firstArr.length != 0) {
 
-                if(runningTotal !=0) {
+                if(runningTotal !=0 && newOperator.length != 0) {
                     firstArr = runningTotal;
-                    runningTotal = operate(firstArr, operator, inputNum);
-                    opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
-                } else if(operator.length !=0){
-                    lastOperator = operator;
-                    console.log(lastOperator);
-                    runningTotal = operate(firstArr, lastOperator, inputNum);
+                    runningTotal = operate(firstArr, newOperator, inputNum);
+                    newOperator = event.target.textContent;
                     opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 } else {
-                    operator = event.target.textContent;
-                    console.log(operator);
-                    runningTotal = operate(firstArr, operator, inputNum);
+                    newOperator = event.target.textContent;
+                    lastOperator = operator;
+                    console.log(`Last: ${lastOperator}, New: ${newOperator}`);
+                    runningTotal = operate(firstArr, lastOperator, inputNum);
                     opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 }
 
@@ -144,6 +143,7 @@ buttons.forEach((button) => {
             } else {
                 
                 operator = event.target.textContent;
+                console.log(`Current: ${operator}`);
                 children.forEach((child) => child.setAttribute("class", "firstOp"));
 
             }
