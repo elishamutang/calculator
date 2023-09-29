@@ -104,14 +104,21 @@ buttons.forEach((button) => {
 
         } else if(event.target.textContent == "=") {
 
-            result = operate(firstArr, operator, inputNum);
+            if(runningTotal !=0) {
+
+                firstArr = runningTotal;
+                runningTotal = operate(firstArr, operator, inputNum);
+
+            }
+            
+            runningTotal = operate(firstArr, operator, inputNum);
 
             firstArr = [];
             inputNum = [];
             operator = [];
             
-            opsDisplay.innerHTML = `<h2 class='result'>${result}</h2>`;
-            totalDisplay.innerHTML = `<h2 class='result' id='total'>${result}</h2>`;
+            opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+            totalDisplay.innerHTML = `<h2 class='result' id='total'>${runningTotal}</h2>`;
 
         } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "*" ||
         event.target.textContent == "/") {
