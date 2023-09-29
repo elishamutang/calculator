@@ -112,6 +112,7 @@ buttons.forEach((button) => {
             
             runningTotal = operate(firstArr, operator, inputNum);
             console.log(runningTotal);
+            
             inputNum = [];
             operator = [];
             
