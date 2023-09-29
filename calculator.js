@@ -139,12 +139,26 @@ buttons.forEach((button) => {
                 console.log(runningTotal);
 
             // For when user performs operation such as (23+7-20/x5 should equal 5)
+            // For when user inputs number and keeps pressing operator sign (e.g 3+++)
             } else if(inputNum.length == 0 && firstArr.length != 0) {
 
-                firstArr = runningTotal;
-                inputNum = runningTotal;
-                runningTotal = operate(firstArr, operator, inputNum);
+                if(runningTotal !=0) {
+                    
+                    firstArr = runningTotal;
+                    inputNum = runningTotal;
+
+                    runningTotal = operate(firstArr, operator, inputNum);
+
+                } else {
+
+                    inputNum = firstArr;
+
+                    runningTotal = operate(firstArr, operator, inputNum);
+
+                }
+
                 operator = event.target.textContent;
+                console.log(runningTotal);
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
 
             } else {
