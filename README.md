@@ -9,5 +9,5 @@ This branch solved the following:
 The following questions still need to be answered/coded:
 
 1. Tweak Equals button. If user repeatedly presses Equals button, what should and should not happen?
-2. Tweak chain operations (make 23+70-20/x5 work)
+2. Tweak chain operations (make 23+7-20/x5 work)
 3. Floating numbers.
