@@ -3,9 +3,11 @@ Final project from The Odin Project's foundations course.
 
 This branch solved the following:
 
-When user clicks "+", it will not show on the calculator display. It will still calculate the sum nonetheless.
+1. When user clicks "+", it will not show on the calculator display. It will still calculate the sum nonetheless.
+2. Chain operations
 
 The following questions still need to be answered/coded:
 
-1. Tweak Equals button. If user repeatedly presses Equals button, what should and should not happen? 
-2. Floating numbers.
+1. Tweak Equals button. If user repeatedly presses Equals button, what should and should not happen?
+2. Tweak chain operations (make 23+70-20/x5 work)
+3. Floating numbers.
