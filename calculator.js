@@ -140,6 +140,14 @@ buttons.forEach((button) => {
 
                 console.log(runningTotal);
 
+            } else if(inputNum.length == 0 && firstArr.length != 0) {
+
+                firstArr = runningTotal;
+                inputNum = runningTotal;
+                runningTotal = operate(firstArr, newOperator, inputNum);
+                newOperator = event.target.textContent;
+                opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+
             } else {
                 
                 operator = event.target.textContent;
