@@ -120,7 +120,7 @@ buttons.forEach((button) => {
             let children = Array.from(opsDisplay.children);
 
             // For when user performs chain operation (eg. 12+7-5*3 should equal 42)
-            // First time running total is stored in firstArr, 
+            // First-time running total is stored in firstArr. 
             if(inputNum.length != 0 && firstArr.length != 0) {
 
                 if(runningTotal !=0) {
@@ -147,7 +147,6 @@ buttons.forEach((button) => {
                 operator = event.target.textContent;
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
 
-            // For first time operation (e.g 12+7 should equal 19)
             } else {
                 
                 operator = event.target.textContent;
