@@ -154,6 +154,12 @@ buttons.forEach((button) => {
                         return;
             
                     }
+                
+                // Prevents undefined error if user inputs a number and presses "=" immediately.
+                } else if(firstArr.length == 0 && inputNum.length != 0) {
+
+                    return;
+
                 }
             }
             
