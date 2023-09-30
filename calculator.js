@@ -149,6 +149,8 @@ buttons.forEach((button) => {
             opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
             totalDisplay.innerHTML = `<h2 class='result' id='total'>${runningTotal}</h2>`;
 
+
+        // Code from here is when a user presses any of the operator signs
         } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "*" ||
         event.target.textContent == "/") {
 
@@ -184,7 +186,8 @@ buttons.forEach((button) => {
                         runningTotal = operate(firstArr, operator, inputNum);
 
                     }
-
+                
+                // When user inputs number and keeps pressing an operator sign (e.g 3+++) without inputting next number.
                 } else {
 
                     inputNum = firstArr;
@@ -205,14 +208,14 @@ buttons.forEach((button) => {
 
             }
             
-            // Reset input. Everytime user enters number and press sign, numbers before sign is captured in firstArr above.
+            // Reset input. Everytime user enters number and press operator sign, numbers before sign is captured in firstArr above.
             inputNum = [];
+            
 
+        // Code below is when user presses number keys and not any operator signs or AC or Del keys.
         } else {
 
-            // This section is for number keys on the keypad.
-
-            // Resets opsDisplay
+            // Resets opsDisplay for new user input.
             if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp')) {
 
                 opsDisplay.innerHTML = '';
