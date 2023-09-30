@@ -170,14 +170,14 @@ buttons.forEach((button) => {
 
             } else {
                 
+                firstArr = inputNum;
                 operator = event.target.textContent;
                 console.log(`Current: ${operator}`);
                 children.forEach((child) => child.setAttribute("class", "firstOp"));
 
             }
             
-            // Reset input. Everytime user enters number and press sign, numbers before sign is captured in firstArr.
-            firstArr = inputNum;
+            // Reset input. Everytime user enters number and press sign, numbers before sign is captured in firstArr above.
             inputNum = [];
 
         } else {
