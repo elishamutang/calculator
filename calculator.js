@@ -151,19 +151,27 @@ buttons.forEach((button) => {
 
                         firstArr = runningTotal;
                         inputNum = runningTotal;
+                        runningTotal = operate(firstArr, operator, inputNum);
                     
+                    } else {
+
+                        console.log("yes");
+                        firstArr = runningTotal;
+                        operator = event.target.textContent;
+
                     }
 
                 } else {
 
                     inputNum = firstArr;
+                    runningTotal = operate(firstArr, operator, inputNum);
 
                 }
 
-                runningTotal = operate(firstArr, operator, inputNum);
-                operator = event.target.textContent;
+                // runningTotal = operate(firstArr, operator, inputNum);
+                // operator = event.target.textContent;
 
-                console.log(runningTotal);
+                console.log(`runningTotal: ${runningTotal}`);
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
 
             } else {
