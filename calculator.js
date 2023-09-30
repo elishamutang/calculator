@@ -160,8 +160,7 @@ buttons.forEach((button) => {
 
                 }
 
-                // runningTotal = operate(firstArr, operator, inputNum);
-                // operator = event.target.textContent;
+                operator = event.target.textContent;
 
                 console.log(`runningTotal: ${runningTotal}`);
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
