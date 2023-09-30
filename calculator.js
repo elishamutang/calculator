@@ -154,11 +154,6 @@ buttons.forEach((button) => {
                         return;
             
                     }
-
-                } else {
-
-                    return;
-
                 }
             }
             
