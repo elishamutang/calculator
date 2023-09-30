@@ -38,11 +38,15 @@ function operate(firstNum, operator, secondNum) {
 
     // If more than 1 element exists in array, join them.
     if(firstNum.length > 1) {
+
         firstNum = firstNum.join('');
+
     }
 
     if(secondNum.length > 1) {
+
         secondNum = secondNum.join('');
+        
     }
 
     // Selects the correct operation
