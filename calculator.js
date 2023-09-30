@@ -106,6 +106,12 @@ buttons.forEach((button) => {
 
             if(runningTotal !=0) {
 
+                if(operator.length == 0 && inputNum.length == 0) {
+
+                    return;
+
+                }
+
                 firstArr = runningTotal;
 
             } else if(runningTotal == 0) {
@@ -114,14 +120,23 @@ buttons.forEach((button) => {
 
                     return;
     
+                } else if(firstArr.length != 0 && inputNum.length == 0) {
+
+                    if(operator.length !=0 && inputNum.length == 0) {
+
+                        inputNum = firstArr;
+
+                    } else if(operator.length == 0 && inputNum.length == 0) {
+
+                        return;
+            
+                    }
+
+                } else if(firstArr.length == 0 && inputNum.length != 0) {
+
+                    return;
+
                 }
-
-                if(operator.length != 0 && inputNum == 0) {
-
-                    inputNum = firstArr;
-
-                }
-
             }
             
             runningTotal = operate(firstArr, operator, inputNum);
