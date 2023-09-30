@@ -88,6 +88,8 @@ buttons.forEach((button) => {
         let displayText = document.createElement("h2");
         displayText.className = "display";
 
+
+        // Clears everything button.
         if(event.target.textContent == "AC") {
 
             opsDisplay.innerHTML = "";
@@ -97,15 +99,24 @@ buttons.forEach((button) => {
             runningTotal = 0;
             operator = [];
 
+
+        // A delete button. For when a user wants to remove his/her last number input.
         } else if(event.target.textContent == "Del") {
 
             opsDisplay.removeChild(opsDisplay.lastElementChild);
             inputNum.splice(0, 1);
 
+
+        // Equals button.
         } else if(event.target.textContent == "=") {
 
+
+            // When there is a running total (i.e user performs a simple operation such as 6+3=9 or 6+= 12), returned result
+            // will be stored in runningTotal.
             if(runningTotal !=0) {
 
+
+                // To prevent error when user repeatedly presses "=" after operation.
                 if(operator.length == 0 && inputNum.length == 0) {
 
                     return;
@@ -113,26 +124,34 @@ buttons.forEach((button) => {
                 }
 
                 firstArr = runningTotal;
-
+            
+            
+            // When a first time operation is performed (i.e runningTotal = 0).
             } else if(runningTotal == 0) {
 
+
+                // Prevents undefined error if user repeatedly presses "=" without any inputs.
                 if(firstArr.length == 0 && inputNum.length == 0) {
 
                     return;
-    
+                    
+
+                // Prevents undefined error if user repeatedly presses "=" after inputting FIRST number.
                 } else if(firstArr.length != 0 && inputNum.length == 0) {
 
+
+                    // Assigns inputNum as first user input if user presses an operator sign and "=" sign without 2nd input.
                     if(operator.length !=0 && inputNum.length == 0) {
 
                         inputNum = firstArr;
 
-                    } else if(operator.length == 0 && inputNum.length == 0) {
+                    } else {
 
                         return;
             
                     }
 
-                } else if(firstArr.length == 0 && inputNum.length != 0) {
+                } else {
 
                     return;
 
