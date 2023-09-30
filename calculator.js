@@ -131,7 +131,6 @@ buttons.forEach((button) => {
                 if(runningTotal !=0) {
 
                     firstArr = runningTotal;
-                    runningTotal = operate(firstArr, operator, inputNum);
 
                 }
 
@@ -152,13 +151,6 @@ buttons.forEach((button) => {
                         firstArr = runningTotal;
                         inputNum = runningTotal;
                         runningTotal = operate(firstArr, operator, inputNum);
-                    
-                    } else {
-
-                        console.log("yes");
-                        firstArr = runningTotal;
-                        operator = event.target.textContent;
-
                     }
 
                 } else {
