@@ -172,7 +172,6 @@ buttons.forEach((button) => {
                 
                 firstArr = inputNum;
                 operator = event.target.textContent;
-                console.log(`Current: ${operator}`);
                 children.forEach((child) => child.setAttribute("class", "firstOp"));
 
             }
