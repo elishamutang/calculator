@@ -32,7 +32,6 @@ function divide(firstArr, secondNum) {
 }
 
 
-
 // Initial declaration (globals, need to avoid)
 let operator = [];
 let inputNum = [];
