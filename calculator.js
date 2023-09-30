@@ -19,10 +19,16 @@ function multiply(firstArr, secondNum) {
 
 function divide(firstArr, secondNum) {
 
-    let divideResult = parseInt(firstArr) / parseInt(secondNum);
-    
-    return divideResult;
+    if(secondNum > 0) {
 
+        let divideResult = parseInt(firstArr) / parseInt(secondNum);
+        return divideResult;
+
+    } else {
+
+        return "bruh";
+
+    }
 }
 
 
