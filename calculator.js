@@ -146,11 +146,13 @@ buttons.forEach((button) => {
 
                 if(runningTotal !=0) {
 
+                    firstArr = runningTotal;
+
                     if(operator.length !=0) {
 
-                        firstArr = runningTotal;
                         inputNum = runningTotal;
                         runningTotal = operate(firstArr, operator, inputNum);
+
                     }
 
                 } else {
