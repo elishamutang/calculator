@@ -44,10 +44,9 @@ function divide(firstArr, secondNum) {
             return "bruh";
 
         }
-
-        return parseFloat(firstArr) / parseFloat(secondNum);
-
     }
+
+    return parseFloat(firstArr) / parseFloat(secondNum);
 }
 
 
