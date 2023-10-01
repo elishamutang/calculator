@@ -135,8 +135,30 @@ buttons.forEach((button) => {
         // A delete button. For when a user wants to remove his/her last number input.
         } else if(event.target.textContent == "Del") {
 
-            opsDisplay.removeChild(opsDisplay.lastElementChild);
-            inputNum.splice(0, 1);
+            if(opsDisplay.innerHTML.includes("initial")) {
+
+                return;
+
+            } else if(opsDisplay.innerHTML.includes("result")) {
+
+                opsDisplay.innerHTML = '';
+                totalDisplay.innerHTML = '';
+                opsDisplay.append(defaultText);
+
+            } else {
+
+                if(opsDisplay.children.length == 1) {
+
+                    opsDisplay.removeChild(opsDisplay.lastElementChild);
+                    opsDisplay.append(defaultText);
+
+                } else {
+
+                    opsDisplay.removeChild(opsDisplay.lastElementChild);
+                    inputNum.splice(0, 1);
+
+                }
+            }
 
 
         // Equals button.
