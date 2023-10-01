@@ -157,12 +157,13 @@ buttons.forEach((button) => {
 
                     opsDisplay.removeChild(opsDisplay.lastElementChild);
                     opsDisplay.append(defaultText);
+                    inputNum = [];
 
                 } else {
 
                     opsDisplay.removeChild(opsDisplay.lastElementChild);
                     inputNum.splice(-1, 1);
-                    
+
                 }
             }
 
