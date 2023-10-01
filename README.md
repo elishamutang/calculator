@@ -7,4 +7,7 @@ The following questions still need to be answered/coded:
 2. Set 0 as default value in calculator.
 
 
-Note-to-self: Create a dedicated function for buttons. Don't use forEach. Remove global variables and localize them.
+Note-to-self for future improvements: 
+
+1. Create a dedicated function for buttons. Remove global variables and localize them.
+2. Styling of calculator.
