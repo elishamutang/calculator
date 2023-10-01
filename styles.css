@@ -43,13 +43,14 @@ body {
 }
 
 #opsDisplay h2:last-child {
-    margin-right: 20px;
+    padding-right: 20px;
 }
 
 #opsDisplay {
     border: 2px solid red;
     display: flex;
     height: 80px;
+    width: inherit;
     flex-wrap: wrap;
     justify-content: flex-end;
     overflow: auto;
@@ -58,6 +59,7 @@ body {
 #totalDisplay {
     border: 2px solid red;
     height: 120px;
+    width: inherit;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -67,8 +69,7 @@ body {
 
 #total {
     margin: 0;
-    margin-right: 20px;
-    padding: 0;
+    padding-right: 20px;
     font-size: 50px;
 }
 
