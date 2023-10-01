@@ -1,19 +1,19 @@
 // Arithmetic operations
 function add(firstArr, secondNum) {
 
-    if(firstArr.includes(".") || secondNum.includes(".")) {
+    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
 
         return parseFloat(firstArr) + parseFloat(secondNum);
 
     }
 
-    return parseInt(firstArr) + parseInt(secondNum);
+    return parseInt(firstArr) + parseInt(secondNum);    
 
 }
 
 function subtract(firstArr, secondNum) {
 
-    if(firstArr.includes(".") || secondNum.includes(".")) {
+    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
 
         return parseFloat(firstArr) - parseFloat(secondNum);
 
@@ -25,7 +25,7 @@ function subtract(firstArr, secondNum) {
 
 function multiply(firstArr, secondNum) {
 
-    if(firstArr.includes(".") || secondNum.includes(".")) {
+    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
 
         return parseFloat(firstArr) * parseFloat(secondNum);
 
@@ -37,14 +37,15 @@ function multiply(firstArr, secondNum) {
 
 function divide(firstArr, secondNum) {
 
-    if(secondNum > 0) {
+    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
 
-        let divideResult = parseInt(firstArr) / parseInt(secondNum);
-        return divideResult;
+        if(secondNum == 0) {
 
-    } else {
+            return "bruh";
 
-        return "bruh";
+        }
+
+        return parseFloat(firstArr) / parseFloat(secondNum);
 
     }
 }
