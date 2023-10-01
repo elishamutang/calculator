@@ -8,7 +8,7 @@ function add(firstArr, secondNum) {
     }
 
     console.log("yes");
-    additionResult = (parseFloat(firstArr) + parseFloat(secondNum)).toFixed(9);
+    additionResult = parseFloat((parseFloat(firstArr) + parseFloat(secondNum)).toFixed(9));
     return additionResult;
 
 }
@@ -22,7 +22,7 @@ function subtract(firstArr, secondNum) {
     }
 
     console.log("yes");
-    subtractResult = (parseFloat(firstArr) - parseFloat(secondNum)).toFixed(9);
+    subtractResult = parseFloat((parseFloat(firstArr) - parseFloat(secondNum)).toFixed(9));
     return subtractResult;
 
 }
@@ -35,7 +35,7 @@ function multiply(firstArr, secondNum) {
 
     }
 
-    multiplyResult = (parseFloat(firstArr) * parseFloat(secondNum)).toFixed(9);
+    multiplyResult = parseFloat((parseFloat(firstArr) * parseFloat(secondNum)).toFixed(9));
     return multiplyResult;
 
 }
@@ -48,7 +48,7 @@ function divide(firstArr, secondNum) {
 
     }
 
-    divideResult = (parseFloat(firstArr) / parseFloat(secondNum)).toFixed(9);
+    divideResult = parseFloat((parseFloat(firstArr) / parseFloat(secondNum)).toFixed(9));
     return divideResult;
     
 }
