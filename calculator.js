@@ -251,11 +251,18 @@ buttons.forEach((button) => {
 
             }
 
-            if(inputNum[0] == 0) {
+            if(inputNum[0] == 0 && inputNum[1] != ".") {
 
-                inputNum.splice(0,1);
-                opsDisplay.innerHTML = '';
+                if(event.target.textContent == ".") {
 
+                    lastNum = event.target.textContent;
+
+                } else {
+
+                    inputNum.splice(0,1);
+                    opsDisplay.innerHTML = '';
+
+                }
             }
 
             // Updates display when numbers are pressed
