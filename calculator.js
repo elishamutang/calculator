@@ -251,6 +251,7 @@ buttons.forEach((button) => {
 
             }
 
+            // If user wants to input floating numbers such as 0.1, 0.2, 0.3 etc.
             if(inputNum[0] == 0 && inputNum[1] != ".") {
 
                 if(event.target.textContent == ".") {
