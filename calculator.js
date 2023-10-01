@@ -285,6 +285,15 @@ buttons.forEach((button) => {
                 }
             }
 
+            if(inputNum.includes(".")) {
+
+                if(event.target.textContent == ".") {
+
+                    return;
+
+                }
+            }
+
             // Updates display when numbers are pressed
             displayText.innerHTML = event.target.textContent;
             opsDisplay.append(displayText);
