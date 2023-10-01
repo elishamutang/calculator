@@ -285,6 +285,7 @@ buttons.forEach((button) => {
                 }
             }
 
+            // Prevents user from inserting more than one "." inside calculator.
             if(inputNum.includes(".")) {
 
                 if(event.target.textContent == ".") {
