@@ -305,6 +305,7 @@ buttons.forEach((button) => {
                 // Prevents user from inputting "." as first input.
                 if(event.target.textContent == ".") {
 
+                    inputNum = [defaultText.textContent];
                     lastNum = event.target.textContent;
                     defaultText.className = "display";
 
