@@ -124,6 +124,7 @@ buttons.forEach((button) => {
         if(event.target.textContent == "AC") {
 
             opsDisplay.innerHTML = "";
+            defaultText.className = "initial";
             opsDisplay.append(defaultText);
             totalDisplay.innerHTML = "";
             inputNum = [];
@@ -135,18 +136,23 @@ buttons.forEach((button) => {
         // A delete button. For when a user wants to remove his/her last number input.
         } else if(event.target.textContent == "Del") {
 
+
+            // Prevents user from deleting initial value.
             if(opsDisplay.innerHTML.includes("initial")) {
 
                 return;
 
+            // Reverts to initial value after completing operation when Del key is pressed.
             } else if(opsDisplay.innerHTML.includes("result")) {
 
                 opsDisplay.innerHTML = '';
                 totalDisplay.innerHTML = '';
+                defaultText.className = "initial";
                 opsDisplay.append(defaultText);
 
             } else {
 
+                // For last element child, when user presses Del key it will revert to initial value.
                 if(opsDisplay.children.length == 1) {
 
                     opsDisplay.removeChild(opsDisplay.lastElementChild);
@@ -155,11 +161,13 @@ buttons.forEach((button) => {
                 } else {
 
                     opsDisplay.removeChild(opsDisplay.lastElementChild);
-                    inputNum.splice(0, 1);
-
+                    inputNum.splice(-1, 1);
+                    
                 }
             }
 
+            runningTotal = 0;
+            firstArr = [];
 
         // Equals button.
         } else if(event.target.textContent == "=") {
