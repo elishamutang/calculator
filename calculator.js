@@ -1,52 +1,56 @@
 // Arithmetic operations
 function add(firstArr, secondNum) {
 
-    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
+    if(Number.isInteger(Number(firstArr)) == true && Number.isInteger(Number(secondNum)) == true) {
 
-        return parseFloat(firstArr) + parseFloat(secondNum);
+        return parseInt(firstArr) + parseInt(secondNum);  
 
     }
 
-    return parseInt(firstArr) + parseInt(secondNum);    
+    console.log("yes");
+    additionResult = (parseFloat(firstArr) + parseFloat(secondNum)).toFixed(9);
+    return additionResult;
 
 }
 
 function subtract(firstArr, secondNum) {
 
-    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
+    if(Number.isInteger(Number(firstArr)) == true && Number.isInteger(Number(secondNum)) == true) {
 
-        return parseFloat(firstArr) - parseFloat(secondNum);
+        return parseInt(firstArr) - parseInt(secondNum);
 
     }
 
-    return parseInt(firstArr) - parseInt(secondNum);
+    console.log("yes");
+    subtractResult = (parseFloat(firstArr) - parseFloat(secondNum)).toFixed(9);
+    return subtractResult;
 
 }
 
 function multiply(firstArr, secondNum) {
 
-    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
+    if(Number.isInteger(Number(firstArr)) == true && Number.isInteger(Number(secondNum)) == true) {
 
-        return parseFloat(firstArr) * parseFloat(secondNum);
+        return parseInt(firstArr) * parseInt(secondNum);
 
     }
 
-    return parseInt(firstArr) * parseInt(secondNum);
+    multiplyResult = (parseFloat(firstArr) * parseFloat(secondNum)).toFixed(9);
+    return multiplyResult;
 
 }
 
 function divide(firstArr, secondNum) {
 
-    if(Number.isInteger(firstArr) == false || Number.isInteger(secondNum) == false) {
+    if(secondNum == 0) {
 
-        if(secondNum == 0) {
+        return "bruh";
 
-            return "bruh";
-
-        }
     }
 
-    return parseFloat(firstArr) / parseFloat(secondNum);
+    divideResult = (parseFloat(firstArr) / parseFloat(secondNum)).toFixed(9);
+    return divideResult;
+    
 }
 
 
