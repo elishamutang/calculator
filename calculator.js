@@ -301,7 +301,18 @@ buttons.forEach((button) => {
             // Resets opsDisplay for new user input.
             if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp') || opsDisplay.innerHTML.includes('initial')) {
 
-                opsDisplay.innerHTML = '';
+
+                // Prevents user from inputting "." as first input.
+                if(event.target.textContent == ".") {
+
+                    lastNum = event.target.textContent;
+                    defaultText.className = "display";
+
+                } else {
+
+                    opsDisplay.innerHTML = '';
+
+                }
 
             }
 
