@@ -240,13 +240,20 @@ buttons.forEach((button) => {
             // Reset input. Everytime user enters number and press operator sign, numbers before sign is captured in firstArr above.
             inputNum = [];
             
-
+        
         // Code below is when user presses number keys and not any operator signs or AC or Del keys.
         } else {
 
             // Resets opsDisplay for new user input.
             if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp')) {
 
+                opsDisplay.innerHTML = '';
+
+            }
+
+            if(inputNum[0] == 0) {
+
+                inputNum.splice(0,1);
                 opsDisplay.innerHTML = '';
 
             }
