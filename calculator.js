@@ -1,17 +1,35 @@
 // Arithmetic operations
 function add(firstArr, secondNum) {
 
+    if(firstArr.includes(".") || secondNum.includes(".")) {
+
+        return parseFloat(firstArr) + parseFloat(secondNum);
+
+    }
+
     return parseInt(firstArr) + parseInt(secondNum);
 
 }
 
 function subtract(firstArr, secondNum) {
 
+    if(firstArr.includes(".") || secondNum.includes(".")) {
+
+        return parseFloat(firstArr) - parseFloat(secondNum);
+
+    }
+
     return parseInt(firstArr) - parseInt(secondNum);
 
 }
 
 function multiply(firstArr, secondNum) {
+
+    if(firstArr.includes(".") || secondNum.includes(".")) {
+
+        return parseFloat(firstArr) * parseFloat(secondNum);
+
+    }
 
     return parseInt(firstArr) * parseInt(secondNum);
 
