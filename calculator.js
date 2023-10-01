@@ -101,6 +101,10 @@ function operate(firstNum, operator, secondNum) {
 
 // Targets operations display
 let opsDisplay = document.getElementById("opsDisplay");
+let defaultText = document.createElement("h2");
+defaultText.className = "initial";
+defaultText.textContent = 0;
+opsDisplay.append(defaultText);
 
 // Targets running total display
 let totalDisplay = document.getElementById("totalDisplay");
@@ -116,10 +120,11 @@ buttons.forEach((button) => {
         displayText.className = "display";
 
 
-        // Clears everything button.
+        // Clears everything button and set default value.
         if(event.target.textContent == "AC") {
 
             opsDisplay.innerHTML = "";
+            opsDisplay.append(defaultText);
             totalDisplay.innerHTML = "";
             inputNum = [];
             firstArr = [];
@@ -263,7 +268,7 @@ buttons.forEach((button) => {
         } else {
 
             // Resets opsDisplay for new user input.
-            if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp')) {
+            if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp') || opsDisplay.innerHTML.includes('initial')) {
 
                 opsDisplay.innerHTML = '';
 
