@@ -62,13 +62,13 @@ let runningTotal = 0;
 function operate(firstNum, operator, secondNum) {
 
     // If more than 1 element exists in array, join them.
-    if(firstNum.length > 1) {
+    if(firstNum.length >= 1) {
 
         firstNum = firstNum.join('');
 
     }
 
-    if(secondNum.length > 1) {
+    if(secondNum.length >= 1) {
 
         secondNum = secondNum.join('');
         
