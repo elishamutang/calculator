@@ -116,6 +116,7 @@ let totalDisplay = document.getElementById("totalDisplay");
 // Targets all buttons in calculator numpad
 let buttons = document.querySelectorAll(".button");
 
+
 // Links each button in numpad to do something
 buttons.forEach((button) => {
     button.addEventListener("mousedown", function(event) {
