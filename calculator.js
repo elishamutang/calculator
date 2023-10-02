@@ -81,7 +81,6 @@ function operate(firstNum, operator, secondNum) {
         secondNum = 0;
 
     }
-    
 
     // Selects the correct operation
     if(operator == "+") {
