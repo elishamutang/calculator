@@ -7,7 +7,6 @@ function add(firstArr, secondNum) {
 
     }
 
-    console.log("yes");
     additionResult = parseFloat((parseFloat(firstArr) + parseFloat(secondNum)).toFixed(9));
     return additionResult;
 
@@ -21,7 +20,6 @@ function subtract(firstArr, secondNum) {
 
     }
 
-    console.log("yes");
     subtractResult = parseFloat((parseFloat(firstArr) - parseFloat(secondNum)).toFixed(9));
     return subtractResult;
 
@@ -294,7 +292,7 @@ buttons.forEach((button) => {
                 operator = event.target.textContent;
 
                 console.log(`runningTotal: ${runningTotal}`);
-                
+
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 totalDisplay.innerHTML = opsDisplay.innerHTML;
                 totalDisplay.append(operatorNode);
