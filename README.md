@@ -5,6 +5,7 @@ The following questions still need to be answered/coded:
 
 1. "&" key not coded yet.
 2. User able to press "." after pressing operator signs.
+3. Make totalDisplay show "=" if user presses "=" key.
 
 Note-to-self for future improvements: 
 
