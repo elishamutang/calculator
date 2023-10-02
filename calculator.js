@@ -242,9 +242,10 @@ buttons.forEach((button) => {
         } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "*" ||
         event.target.textContent == "/") {
 
-
+            // To copy children from opsDisplay over to totalDisplay.
             let children = Array.from(opsDisplay.children);
 
+            // For appending operator sign
             const operatorNode = displayText;
             operatorNode.className = "operator";
             operatorNode.textContent = event.target.textContent;
@@ -264,6 +265,7 @@ buttons.forEach((button) => {
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 totalDisplay.innerHTML = opsDisplay.innerHTML;
                 totalDisplay.append(operatorNode);
+
                 console.log(runningTotal);
 
             // For when user performs operation such as (23+7-20/x5 should equal 5)
@@ -292,6 +294,7 @@ buttons.forEach((button) => {
                 operator = event.target.textContent;
 
                 console.log(`runningTotal: ${runningTotal}`);
+                
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 totalDisplay.innerHTML = opsDisplay.innerHTML;
                 totalDisplay.append(operatorNode);
