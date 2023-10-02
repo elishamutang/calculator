@@ -258,6 +258,7 @@ buttons.forEach((button) => {
                 operator = event.target.textContent;
 
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+                totalDisplay.innerHTML = opsDisplay.innerHTML;
                 console.log(runningTotal);
 
             // For when user performs operation such as (23+7-20/x5 should equal 5)
@@ -295,7 +296,16 @@ buttons.forEach((button) => {
                 children.forEach((child) => child.setAttribute("class", "firstOp"));
 
             }
-            
+
+            // Copy and paste values from opsDisplay to totalDisplay along with operator.
+            children.forEach((child) => {
+
+                clone = child.cloneNode(true);
+                totalDisplay.append(clone);
+
+            });
+
+
             // Reset input. Everytime user enters number and press operator sign, numbers before sign is captured in firstArr above.
             inputNum = [];
             
