@@ -300,7 +300,7 @@ buttons.forEach((button) => {
             inputNum = [];
             
         
-        // Code below is when user presses number keys and not any operator signs or AC or Del keys.
+        // Code below is when user presses ONLY number keys and not any operator signs or AC or Del keys.
         } else {
 
             // Resets opsDisplay for new user input.
