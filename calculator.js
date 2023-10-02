@@ -261,7 +261,7 @@ buttons.forEach((button) => {
                 console.log(runningTotal);
 
             // For when user performs operation such as (23+7-20/x5 should equal 5)
-            // For when user inputs number and keeps pressing operator sign (e.g 3+++)
+            // and for when user inputs number and keeps pressing operator sign (e.g 3+++)
             } else if(inputNum.length == 0 && firstArr.length != 0) {
 
                 if(runningTotal !=0) {
