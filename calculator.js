@@ -66,13 +66,22 @@ function operate(firstNum, operator, secondNum) {
 
         firstNum = firstNum.join('');
 
+    } else if(firstNum.length == 0) {
+
+        firstNum = 0;
+
     }
 
     if(secondNum.length >= 1) {
 
         secondNum = secondNum.join('');
         
+    } else if(secondNum.length == 0) {
+
+        secondNum = 0;
+
     }
+    
 
     // Selects the correct operation
     if(operator == "+") {
