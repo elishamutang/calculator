@@ -245,6 +245,10 @@ buttons.forEach((button) => {
 
             let children = Array.from(opsDisplay.children);
 
+            const operatorNode = displayText;
+            operatorNode.className = "operator";
+            operatorNode.textContent = event.target.textContent;
+
             // For when user performs chain operation (eg. 12+7-5*3 should equal 42)
             if(inputNum.length != 0 && firstArr.length != 0) {
 
@@ -259,6 +263,7 @@ buttons.forEach((button) => {
 
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
                 totalDisplay.innerHTML = opsDisplay.innerHTML;
+                totalDisplay.append(operatorNode);
                 console.log(runningTotal);
 
             // For when user performs operation such as (23+7-20/x5 should equal 5)
@@ -288,6 +293,8 @@ buttons.forEach((button) => {
 
                 console.log(`runningTotal: ${runningTotal}`);
                 opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+                totalDisplay.innerHTML = opsDisplay.innerHTML;
+                totalDisplay.append(operatorNode);
 
             } else {
                 
@@ -295,16 +302,17 @@ buttons.forEach((button) => {
                 operator = event.target.textContent;
                 children.forEach((child) => child.setAttribute("class", "firstOp"));
 
+                // Copy and paste values from opsDisplay to totalDisplay along with operator.
+                children.forEach((child) => {
+
+                    clone = child.cloneNode(true);
+                    totalDisplay.append(clone);
+
+                });
+
+                totalDisplay.append(operatorNode);
+
             }
-
-            // Copy and paste values from opsDisplay to totalDisplay along with operator.
-            children.forEach((child) => {
-
-                clone = child.cloneNode(true);
-                totalDisplay.append(clone);
-
-            });
-
 
             // Reset input. Everytime user enters number and press operator sign, numbers before sign is captured in firstArr above.
             inputNum = [];
