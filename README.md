@@ -4,8 +4,6 @@ Final project from The Odin Project's foundations course.
 The following questions still need to be answered/coded:
 
 1. "&" key not coded yet.
-2. User able to press "." after pressing operator signs. (Fix this!)
-3. Make totalDisplay show "=" if user presses "=" key.
 
 Note-to-self for future improvements: 
 
