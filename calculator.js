@@ -340,11 +340,11 @@ buttons.forEach((button) => {
                     if(firstArr.length != 0) {
 
                         opsDisplay.innerHTML = '';
+                        opsDisplay.append(defaultText);
 
                     }
-                    console.log("yes");
+
                     inputNum = [defaultText.textContent];
-                    displayText.innerHTML = defaultText.textContent;
                     defaultText.className = "display";
                     
 
