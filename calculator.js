@@ -206,7 +206,7 @@ buttons.forEach((button) => {
                 }
 
                 firstArr = runningTotal;
-                totalDisplay.innerHTML = `<h2 class='result operator'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
+                totalDisplay.innerHTML = `<h2 class='result-operator'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
             
             
             // When a first time operation is performed (i.e runningTotal = 0).
@@ -242,7 +242,7 @@ buttons.forEach((button) => {
                 }
 
                 // For first time operation, if user inputs more than 1 digit, join the first input.
-                totalDisplay.innerHTML = `<h2 class='result operator'>${firstArr.join('')} ${operator} ${inputNum.join('')} = </h2>`;
+                totalDisplay.innerHTML = `<h2 class='result-operator'>${firstArr.join('')} ${operator} ${inputNum.join('')} = </h2>`;
 
             }    
 
@@ -350,7 +350,12 @@ buttons.forEach((button) => {
                 // Prevents user from inputting "." as first input.
                 if(event.target.textContent == ".") {
 
-                    if(firstArr.length != 0) {
+                    // Resets calculator when user presses "=" and then decides to press any other buttons EXCEPT operator signs.
+                    if(firstArr.toString().length != 0 && totalDisplay.innerHTML.includes('result-operator')) {
+
+                        allClear();
+
+                    } else {
 
                         opsDisplay.innerHTML = '';
                         opsDisplay.append(defaultText);
@@ -361,8 +366,9 @@ buttons.forEach((button) => {
                     defaultText.className = "display";
                     
 
-                } else if(totalDisplay.innerHTML.includes('operator')) {
+                } else if(totalDisplay.innerHTML.includes('result-operator')) {
 
+                    allClear();
                     opsDisplay.innerHTML = '';
 
                 } else {
