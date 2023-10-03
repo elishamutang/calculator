@@ -337,9 +337,16 @@ buttons.forEach((button) => {
                 // Prevents user from inputting "." as first input.
                 if(event.target.textContent == ".") {
 
+                    if(firstArr.length != 0) {
+
+                        opsDisplay.innerHTML = '';
+
+                    }
+                    console.log("yes");
                     inputNum = [defaultText.textContent];
-                    lastNum = event.target.textContent;
+                    displayText.innerHTML = defaultText.textContent;
                     defaultText.className = "display";
+                    
 
                 } else {
 
