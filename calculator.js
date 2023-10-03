@@ -114,7 +114,7 @@ function allClear() {
     defaultText.className = "initial";
     opsDisplay.append(defaultText);
     totalDisplay.innerHTML = "";
-    
+
     inputNum = [];
     firstArr = [];
     runningTotal = 0;
@@ -205,6 +205,8 @@ buttons.forEach((button) => {
                 
                 }
 
+                totalDisplay.innerHTML = `<h2 class='result'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
+
                 firstArr = runningTotal;
             
             
@@ -239,16 +241,17 @@ buttons.forEach((button) => {
                     return;
 
                 }
-            }
-            
-            totalDisplay.innerHTML = `<h2 class='result'>${firstArr.join('')} ${operator} ${inputNum.join('')} = </h2>`;
+
+                // For first time operation, if user inputs more than 1 digit, join the first input.
+                totalDisplay.innerHTML = `<h2 class='result'>${firstArr.join('')} ${operator} ${inputNum.join('')} = </h2>`;
+
+            }    
 
             runningTotal = operate(firstArr, operator, inputNum);
             firstArr = runningTotal;
             console.log(runningTotal);
             
             opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
-            
 
             inputNum = [];
             operator = [];
@@ -358,6 +361,10 @@ buttons.forEach((button) => {
                     inputNum = [defaultText.textContent];
                     defaultText.className = "display";
                     
+
+                } else if(totalDisplay.innerHTML.includes('operator')) {
+
+                    opsDisplay.innerHTML = '';
 
                 } else {
 
