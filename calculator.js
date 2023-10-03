@@ -194,7 +194,7 @@ buttons.forEach((button) => {
                 if(operator.length == 0 && inputNum.length == 0) {
 
                     return;
-
+                
                 }
 
                 firstArr = runningTotal;
@@ -233,15 +233,18 @@ buttons.forEach((button) => {
                 }
             }
             
+            totalDisplay.innerHTML = `<h2 class='result'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
+
             runningTotal = operate(firstArr, operator, inputNum);
             firstArr = runningTotal;
             console.log(runningTotal);
             
+            opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
+            
+
             inputNum = [];
             operator = [];
             
-            opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
-            totalDisplay.innerHTML = `<h2 class='result' id='total'>${runningTotal}</h2>`;
 
 
         // Code from here is when a user presses any of the operator signs
