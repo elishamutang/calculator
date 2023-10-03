@@ -205,9 +205,8 @@ buttons.forEach((button) => {
                 
                 }
 
-                totalDisplay.innerHTML = `<h2 class='result'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
-
                 firstArr = runningTotal;
+                totalDisplay.innerHTML = `<h2 class='result operator'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
             
             
             // When a first time operation is performed (i.e runningTotal = 0).
@@ -243,7 +242,7 @@ buttons.forEach((button) => {
                 }
 
                 // For first time operation, if user inputs more than 1 digit, join the first input.
-                totalDisplay.innerHTML = `<h2 class='result'>${firstArr.join('')} ${operator} ${inputNum.join('')} = </h2>`;
+                totalDisplay.innerHTML = `<h2 class='result operator'>${firstArr.join('')} ${operator} ${inputNum.join('')} = </h2>`;
 
             }    
 
