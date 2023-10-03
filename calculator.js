@@ -107,6 +107,22 @@ function operate(firstNum, operator, secondNum) {
 
 };
 
+// When user presses "AC" button, it will reset the calculator.
+function allClear() {
+
+    opsDisplay.innerHTML = "";
+    defaultText.className = "initial";
+    opsDisplay.append(defaultText);
+    totalDisplay.innerHTML = "";
+    
+    inputNum = [];
+    firstArr = [];
+    runningTotal = 0;
+    operator = [];
+
+}
+
+
 // Calculator display
 
 // Targets operations display
@@ -134,15 +150,7 @@ buttons.forEach((button) => {
         // Clears everything button and set default value.
         if(event.target.textContent == "AC") {
 
-            opsDisplay.innerHTML = "";
-            defaultText.className = "initial";
-            opsDisplay.append(defaultText);
-            totalDisplay.innerHTML = "";
-            inputNum = [];
-            firstArr = [];
-            runningTotal = 0;
-            operator = [];
-
+            allClear();
 
         // A delete button. For when a user wants to remove his/her last number input.
         } else if(event.target.textContent == "Del") {
@@ -233,7 +241,7 @@ buttons.forEach((button) => {
                 }
             }
             
-            totalDisplay.innerHTML = `<h2 class='result'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
+            totalDisplay.innerHTML = `<h2 class='result'>${firstArr.join('')} ${operator} ${inputNum.join('')} = </h2>`;
 
             runningTotal = operate(firstArr, operator, inputNum);
             firstArr = runningTotal;
