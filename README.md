@@ -3,7 +3,7 @@ Final project from The Odin Project's foundations course.
 
 The following questions still need to be answered/coded:
 
-1. "&" key not coded yet.
+1. "%" key not coded yet.
 2. Add keyboard support.
 
 Note-to-self for future improvements: 
