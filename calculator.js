@@ -93,12 +93,12 @@ function operate(firstNum, operator, secondNum) {
         console.log(firstNum, operator, secondNum);
         return subtract(firstNum, secondNum);
 
-    } else if(operator == "*") {
+    } else if(operator == "x") {
 
         console.log(firstNum, operator, secondNum);
         return multiply(firstNum, secondNum);
 
-    } else if(operator == "/") {
+    } else if(operator == "÷") {
 
         console.log(firstNum, operator, secondNum);
         return divide(firstNum, secondNum);
@@ -258,8 +258,8 @@ buttons.forEach((button) => {
 
 
         // Code from here is when a user presses any of the operator signs
-        } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "*" ||
-        event.target.textContent == "/") {
+        } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "x" ||
+        event.target.textContent == "÷") {
 
             // To copy children from opsDisplay over to totalDisplay.
             let children = Array.from(opsDisplay.children);
@@ -340,6 +340,13 @@ buttons.forEach((button) => {
             inputNum = [];
             
         
+        // When user presses "%" key.
+        } else if(event.target.textContent == "%") {
+
+
+
+
+
         // Code below is when user presses ONLY number keys and not any operator signs or AC or Del keys.
         } else {
 
