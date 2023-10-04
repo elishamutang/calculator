@@ -243,7 +243,7 @@ buttons.forEach((button) => {
 
                 // For first time operation, if user inputs more than 1 digit, join the first input.
                 totalDisplay.innerHTML = `<h2 class='result-operator'>${firstArrCheck = firstArr.length > 0 ? firstArr.join('') : firstArr} 
-                                        ${operator} ${inputNum.join('')} = </h2>`;
+                                        ${operator} ${inputNumCheck = inputNum.length > 0 ? inputNum.join('') : inputNum} = </h2>`;
 
             }    
 
@@ -339,19 +339,6 @@ buttons.forEach((button) => {
 
             // Reset input. Everytime user enters number and press operator sign, numbers before sign is captured in firstArr above.
             inputNum = [];
-            
-        
-        // When user presses "%" key.
-        } else if(event.target.textContent == "%") {
-
-            if(typeof inputNum == 'object') {
-                inputNum = inputNum.join('')
-            }
-            inputNum = inputNum / 100;
-            
-            displayText.innerHTML = inputNum;
-            opsDisplay.innerHTML = '';
-            opsDisplay.append(displayText);
 
 
         // Code below is when user presses ONLY number keys and not any operator signs or AC or Del keys.
