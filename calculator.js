@@ -340,9 +340,31 @@ buttons.forEach((button) => {
             // Reset input. Everytime user enters number and press operator sign, numbers before sign is captured in firstArr above.
             inputNum = [];
 
+        } else if (event.target.textContent == "%") {
 
+            if(opsDisplay.children) {
+
+                opsDisplay.innerHTML = '';
+
+                if(inputNum.length > 1) {
+
+                    inputNum = inputNum.join('') / 100;
+
+                } else {
+
+                    console.log("yes");
+                    inputNum = inputNum / 100;
+
+                }
+
+                displayText.innerHTML = inputNum;
+                opsDisplay.append(displayText);
+
+            }
+
+        }
         // Code below is when user presses ONLY number keys and not any operator signs or AC or Del keys.
-        } else {
+         else {
 
             // Resets opsDisplay for new user input.
             if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp') || opsDisplay.innerHTML.includes('initial')) {
