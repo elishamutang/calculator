@@ -3,9 +3,8 @@ Final project from The Odin Project's foundations course.
 
 The following questions still need to be answered/coded:
 
-1. "%" key not coded yet (ON-HOLD)
-2. Add keyboard support.
-3. Style calculator.
+1. Add keyboard support.
+2. Style calculator.
 
 Note-to-self for future improvements: 
 
