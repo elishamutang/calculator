@@ -206,7 +206,8 @@ buttons.forEach((button) => {
                 }
 
                 firstArr = runningTotal;
-                totalDisplay.innerHTML = `<h2 class='result-operator'>${firstArr} ${operator} ${inputNum.join('')} = </h2>`;
+                totalDisplay.innerHTML = `<h2 class='result-operator'>${firstArr} ${operator} ${inputNumCheck = inputNum.length
+                                            > 1 ? inputNum.join('') : inputNum} = </h2>`;
             
             
             // When a first time operation is performed (i.e runningTotal = 0).
@@ -342,7 +343,7 @@ buttons.forEach((button) => {
 
         } else if (event.target.textContent == "%") {
 
-            if(opsDisplay.children) {
+            if(opsDisplay.children && !totalDisplay.innerHTML.includes('result-operator')) {
 
                 opsDisplay.innerHTML = '';
 
