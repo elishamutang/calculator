@@ -343,9 +343,10 @@ buttons.forEach((button) => {
 
         } else if (event.target.textContent == "%") {
 
-            if(opsDisplay.children && !totalDisplay.innerHTML.includes('result-operator')) {
+            opsDisplay.innerHTML = '';
 
-                opsDisplay.innerHTML = '';
+            // If user presses '%' key after pressing '=', it will take the runningTotal and convert to its percentage value.
+            if(opsDisplay.children && !totalDisplay.innerHTML.includes('result-operator')) {
 
                 if(inputNum.length > 1) {
 
@@ -359,6 +360,14 @@ buttons.forEach((button) => {
                 }
 
                 displayText.innerHTML = inputNum;
+                opsDisplay.append(displayText);
+
+            } else {
+
+                firstArr = firstArr / 100;
+                runningTotal = firstArr;
+
+                displayText.innerHTML = firstArr;
                 opsDisplay.append(displayText);
 
             }
