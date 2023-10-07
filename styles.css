@@ -14,7 +14,7 @@ body {
     border-radius: 20px;
     width: 450px;
     height: 560px;
-    background-color: #A5C9CA;
+    background-color: #bdffe4;
     margin: 60px auto;
 }
 
@@ -26,7 +26,7 @@ body {
     border: none;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    background-color: #E7F6F2;
+    background-color: #000000;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -36,11 +36,12 @@ body {
 /* Operations display */
 
 #opsDisplay h2 {
-    font-size: 60px;
+    font-size: 50px;
     letter-spacing: 3px;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    color: white;
 }
 
 #opsDisplay h2:first-child {
@@ -81,6 +82,7 @@ body {
     letter-spacing: 3px;
     margin: 0;
     padding-bottom: 20px;
+    color: white;
 }
 
 #totalDisplay h2:last-child {
@@ -141,6 +143,18 @@ body {
 .button:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -4px 0 inset;
     transform: translateY(-2px);
+}
+
+#Equals:hover {
+    background-color: rgb(81, 194, 81);
+}
+
+#AC:hover, #Del:hover {
+    background-color: rgb(238, 71, 71);
+}
+
+.operator:hover {
+    background-color: rgb(81, 81, 222);
 }
 
 .button:active {
