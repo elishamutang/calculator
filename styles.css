@@ -43,6 +43,10 @@ body {
     overflow: hidden;
 }
 
+#opsDisplay h2:first-child {
+    padding-left: 20px;
+}
+
 #opsDisplay h2:last-child {
     padding-right: 20px;
 }
@@ -52,9 +56,9 @@ body {
     display: flex;
     height: 120px;
     width: inherit;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* Total display */
