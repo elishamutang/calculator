@@ -53,6 +53,7 @@ body {
 
 #opsDisplay {
     border: 2px solid black;
+    border-top: none;
     display: flex;
     height: 120px;
     width: inherit;
@@ -79,7 +80,7 @@ body {
     font-size: 25px;
     letter-spacing: 3px;
     margin: 0;
-    padding: 0;
+    padding-bottom: 20px;
 }
 
 #totalDisplay h2:last-child {
