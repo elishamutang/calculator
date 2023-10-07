@@ -90,10 +90,11 @@ body {
 .numpad {
     width: inherit;
     height: 80px;
-    border: 2px solid black;
     border-top: none;
     display: flex;
     align-items: center;
+    gap: 10px;
+    padding: 15px;
 }
 
 .numpad:last-child {
@@ -103,8 +104,14 @@ body {
 
 .button {
     font-size: 25px;
-    margin: 0;
     padding: 0;
-    width: 112.5px;
+    width: 100px;
+    height: 48px;
+    border-radius: 10px;
     text-align: center;
+    background-color: white;
+}
+
+.row-5 button:last-child {
+    flex: 1;
 }
