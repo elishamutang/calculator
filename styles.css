@@ -13,7 +13,7 @@ body {
 #calBody {
     border-radius: 20px;
     width: 450px;
-    height: 600px;
+    height: 560px;
     background-color: #A5C9CA;
     margin: 60px auto;
 }
@@ -22,7 +22,7 @@ body {
 
 #calDisplay {
     width: 450px;
-    height: 200px;
+    height: 160px;
     border: none;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
@@ -52,10 +52,10 @@ body {
 }
 
 #opsDisplay {
-    border: 2px solid black;
+    border: 20px solid #467468;
     border-top: none;
     display: flex;
-    height: 120px;
+    height: 80px;
     width: inherit;
     flex-wrap: nowrap;
     justify-content: flex-end;
@@ -65,7 +65,7 @@ body {
 /* Total display */
 
 #totalDisplay {
-    border: 2px solid black;
+    border: 20px solid #467468;
     border-bottom: none;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
@@ -92,8 +92,8 @@ body {
     width: inherit;
     height: 80px;
     border-top: none;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 10px solid #467468;
+    border-right: 10px solid #467468;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -101,7 +101,7 @@ body {
 }
 
 .row-5 {
-    border-bottom: 2px solid black;
+    border-bottom: 10px solid #467468;
 }
 
 .numpad:last-child {
@@ -118,14 +118,14 @@ body {
     width: 100px;
     height: 48px;
     text-align: center;
-    background-color: white;
+    background-color: #369781;
     box-shadow: rbga(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     cursor: pointer;
     overflow: hidden;
     padding-left: 16px;
     padding-right: 16px;
     text-decoration: none;
-    transition: box-shadow .20s, transform .20s;
+    transition: box-shadow .10s, transform .10s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
@@ -138,7 +138,7 @@ body {
 }
 
 .button:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -4px 0 inset;
     transform: translateY(-2px);
 }
 
