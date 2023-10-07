@@ -449,8 +449,8 @@ let buttons = document.querySelectorAll(".button");
 
     // Links each button in numpad to do something
     buttons.forEach((button) => {
-        button.addEventListener("mousedown", calculatorLogic, false);
-        button.addEventListener("keydown", calculatorLogic, false);
+        button.addEventListener("mousedown", calculatorLogic);
+        button.addEventListener("keydown", calculatorLogic);
     })
 }
 
