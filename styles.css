@@ -104,12 +104,40 @@ body {
 
 .button {
     font-size: 25px;
+    appearance: none;
+    border-width: 0;
+    border-radius: 40px;
     padding: 0;
     width: 100px;
     height: 48px;
-    border-radius: 10px;
     text-align: center;
     background-color: white;
+    box-shadow: rbga(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    cursor: pointer;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    transition: box-shadow .20s, transform .20s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+}
+
+.button:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rbga(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -13px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-sizing: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 .row-5 button:last-child {
