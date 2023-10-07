@@ -40,6 +40,7 @@ body {
     letter-spacing: 3px;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 #opsDisplay h2:last-child {
