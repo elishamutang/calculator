@@ -164,7 +164,7 @@ function calculatorLogic(event) {
         firstArr = [];
 
     // Equals button.
-    } else if(event.target.textContent == "=") {
+    } else if(event.target.textContent == "=" || event.key == "=") {
 
 
         // When there is a running total (i.e user performs a simple operation such as 6+3=9 or 6+= 12), returned result
@@ -350,7 +350,7 @@ function calculatorLogic(event) {
     // Code below is when user presses ONLY number keys and not any operator signs or AC or Del keys.
     else {
 
-        console.log(event.key)
+        console.log(event)
 
         // Resets opsDisplay for new user input.
         if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp') || opsDisplay.innerHTML.includes('initial')) {
@@ -445,7 +445,7 @@ let totalDisplay = document.getElementById("totalDisplay");
 // Targets all buttons in calculator numpad
 let buttons = document.querySelectorAll(".button");
 
- function myCalculator() {
+function myCalculator() {
 
     // Links each button in numpad to do something
     buttons.forEach((button) => {
