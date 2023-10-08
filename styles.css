@@ -167,3 +167,25 @@ body {
 .row-5 button:last-child {
     flex: 1;
 }
+
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 34px;
+}
+
+#github {
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    flex: 0;
+}
+
+#author {
+    text-align: center;
+    align-self: center;
+}
