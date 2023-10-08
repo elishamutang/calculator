@@ -466,7 +466,6 @@ function myCalculator() {
     window.addEventListener("keydown", function(e) {
         const key = this.document.querySelector(`button[data-key="${e.key}"]`);
         if(!key) return;
-        console.log(e.type, e.key);
         calculatorLogic(e.key);
     });
 }
