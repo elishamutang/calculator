@@ -51,7 +51,7 @@ function divide(firstArr, secondNum) {
     
 }
 
-// Operate function: takes an operator and 2 numbers and calls one of the above functions
+// Evaluates operation and determines the correct arithmetic function to use.
 function operate(firstNum, operator, secondNum) {
 
     // If more than 1 element exists in array, join them.
@@ -100,7 +100,8 @@ function operate(firstNum, operator, secondNum) {
 
 };
 
-// When user presses "AC" button, it will reset the calculator.
+
+// Resets the calculator.
 function allClear() {
 
     opsDisplay.innerHTML = "";
@@ -115,6 +116,8 @@ function allClear() {
 
 }
 
+
+// Main code logic
 function calculatorLogic(userInput) {
 
     let displayText = document.createElement("h2");
@@ -277,7 +280,7 @@ function calculatorLogic(userInput) {
 
                 }
             
-            // When user inputs number and keeps pressing an operator sign (e.g 3+++) without inputting next number.
+            // Prevents user from pressing an operator sign (e.g 3+++) without inputting next number.
             } else {
 
                 inputNum = firstArr;
@@ -439,15 +442,17 @@ let totalDisplay = document.getElementById("totalDisplay");
 // Targets all buttons in calculator numpad
 let buttons = document.querySelectorAll(".button");
 
+// Function to fire both eventListeners.
 function myCalculator() {
 
-    // Links each button in numpad to do something
+    // Links each button to detect mouse clicks.
     buttons.forEach((button) => {
         button.addEventListener("mousedown", function(e) {
             calculatorLogic(e.target.textContent);
         });
     })
 
+    // Keyboard functionality
     window.addEventListener("keydown", function(e) {
         const key = this.document.querySelector(`button[data-key="${e.key}"]`);
         if(!key) return;
