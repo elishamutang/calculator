@@ -297,8 +297,20 @@ function calculatorLogic(userInput) {
             totalDisplay.append(operatorNode);
 
         } else {
+
+            // Takes initial value 0 as first input if user presses any operator signs.
+            if(opsDisplay.innerHTML.includes("initial")) {
+                
+                firstArr = 0;
+                
+                if(totalDisplay.innerHTML.includes('operator')) return;
+
+            } else {
+
+                firstArr = inputNum;
+
+            }
             
-            firstArr = inputNum;
             operator = userInput;
             children.forEach((child) => child.setAttribute("class", "firstOp"));
 
