@@ -350,7 +350,7 @@ function calculatorLogic(event) {
     // Code below is when user presses ONLY number keys and not any operator signs or AC or Del keys.
     else {
 
-        console.log(event)
+        console.log(event.key);
 
         // Resets opsDisplay for new user input.
         if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp') || opsDisplay.innerHTML.includes('initial')) {
@@ -450,8 +450,13 @@ function myCalculator() {
     // Links each button in numpad to do something
     buttons.forEach((button) => {
         button.addEventListener("mousedown", calculatorLogic);
-        button.addEventListener("keydown", calculatorLogic);
     })
+
+    window.addEventListener("keydown", function(e) {
+        const key = this.document.querySelector(`button[data-key="${e.key}"]`);
+        if(!key) return;
+        console.log(key.textContent);
+    });
 }
 
 myCalculator();
