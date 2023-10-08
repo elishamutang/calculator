@@ -86,12 +86,12 @@ function operate(firstNum, operator, secondNum) {
         console.log(firstNum, operator, secondNum);
         return subtract(firstNum, secondNum);
 
-    } else if(operator == "x") {
+    } else if(operator == "x" || operator == "*") {
 
         console.log(firstNum, operator, secondNum);
         return multiply(firstNum, secondNum);
 
-    } else if(operator == "÷") {
+    } else if(operator == "÷" || operator == "/") {
 
         console.log(firstNum, operator, secondNum);
         return divide(firstNum, secondNum);
@@ -115,19 +115,18 @@ function allClear() {
 
 }
 
-function calculatorLogic(event) {
+function calculatorLogic(userInput) {
 
     let displayText = document.createElement("h2");
     displayText.className = "display";
 
-
     // Clears everything button and set default value.
-    if(event.target.textContent == "AC") {
+    if(userInput == "AC" || userInput == "Escape") {
 
         allClear();
 
     // A delete button. For when a user wants to remove his/her last number input.
-    } else if(event.target.textContent == "Del") {
+    } else if(userInput == "Del" || userInput == "Backspace") {
 
 
         // Prevents user from deleting initial value.
@@ -164,7 +163,7 @@ function calculatorLogic(event) {
         firstArr = [];
 
     // Equals button.
-    } else if(event.target.textContent == "=" || event.key == "=") {
+    } else if(userInput == "=" || userInput == "Enter") {
 
 
         // When there is a running total (i.e user performs a simple operation such as 6+3=9 or 6+= 12), returned result
@@ -234,8 +233,8 @@ function calculatorLogic(event) {
 
 
     // Code from here is when a user presses any of the operator signs
-    } else if(event.target.textContent == "+" || event.target.textContent == "-" || event.target.textContent == "x" ||
-    event.target.textContent == "÷") {
+    } else if(userInput == "+" || userInput == "-" || userInput == "x" || userInput == "*" || userInput == "÷" || 
+                userInput == "/") {
 
         // To copy children from opsDisplay over to totalDisplay.
         let children = Array.from(opsDisplay.children);
@@ -243,7 +242,7 @@ function calculatorLogic(event) {
         // For appending operator sign
         const operatorNode = displayText;
         operatorNode.className = "operator";
-        operatorNode.textContent = event.target.textContent;
+        operatorNode.textContent = userInput;
 
         // For when user performs chain operation (eg. 12+7-5*3 should equal 42)
         if(inputNum.length != 0 && firstArr.length != 0) {
@@ -255,7 +254,7 @@ function calculatorLogic(event) {
             }
 
             runningTotal = operate(firstArr, operator, inputNum);
-            operator = event.target.textContent;
+            operator = userInput;
 
             opsDisplay.innerHTML = `<h2 class='result'>${runningTotal}</h2>`;
             totalDisplay.innerHTML = opsDisplay.innerHTML;
@@ -286,7 +285,7 @@ function calculatorLogic(event) {
 
             }
 
-            operator = event.target.textContent;
+            operator = userInput;
 
             console.log(`runningTotal: ${runningTotal}`);
 
@@ -297,7 +296,7 @@ function calculatorLogic(event) {
         } else {
             
             firstArr = inputNum;
-            operator = event.target.textContent;
+            operator = userInput;
             children.forEach((child) => child.setAttribute("class", "firstOp"));
 
             // Copy and paste values from opsDisplay to totalDisplay along with operator.
@@ -315,7 +314,7 @@ function calculatorLogic(event) {
         // Reset input. Everytime user enters number and press operator sign, numbers before sign is captured in firstArr above.
         inputNum = [];
 
-    } else if (event.target.textContent == "%") {
+    } else if (userInput == "%") {
 
         opsDisplay.innerHTML = '';
 
@@ -350,14 +349,13 @@ function calculatorLogic(event) {
     // Code below is when user presses ONLY number keys and not any operator signs or AC or Del keys.
     else {
 
-        console.log(event.key);
 
         // Resets opsDisplay for new user input.
         if(opsDisplay.innerHTML.includes('result') || opsDisplay.innerHTML.includes('firstOp') || opsDisplay.innerHTML.includes('initial')) {
 
 
             // Prevents user from inputting "." as first input.
-            if(event.target.textContent == ".") {
+            if(userInput == ".") {
 
                 // Resets calculator when user presses "=" and then decides to press any other buttons EXCEPT operator signs.
                 if(firstArr.toString().length != 0 && totalDisplay.innerHTML.includes('result-operator')) {
@@ -391,9 +389,9 @@ function calculatorLogic(event) {
         // If user wants to input floating numbers such as 0.1, 0.2, 0.3 etc.
         if(inputNum[0] == 0 && inputNum[1] != ".") {
 
-            if(event.target.textContent == ".") {
+            if(userInput == ".") {
 
-                lastNum = event.target.textContent;
+                lastNum = userInput;
 
             } else {
 
@@ -406,18 +404,14 @@ function calculatorLogic(event) {
         // Prevents user from inserting more than one "." inside calculator.
         if(inputNum.includes(".")) {
 
-            if(event.target.textContent == ".") {
-
-                return;
-
-            }
+            if(userInput == ".") return;
         }
 
         // Updates display when numbers are pressed
-        displayText.innerHTML = event.target.textContent;
+        displayText.innerHTML = userInput;
         opsDisplay.append(displayText);
 
-        lastNum = event.target.textContent;
+        lastNum = userInput;
         inputNum.push(lastNum);
         console.log(inputNum);
     }
@@ -449,13 +443,16 @@ function myCalculator() {
 
     // Links each button in numpad to do something
     buttons.forEach((button) => {
-        button.addEventListener("mousedown", calculatorLogic);
+        button.addEventListener("mousedown", function(e) {
+            calculatorLogic(e.target.textContent);
+        });
     })
 
     window.addEventListener("keydown", function(e) {
         const key = this.document.querySelector(`button[data-key="${e.key}"]`);
         if(!key) return;
-        console.log(key.textContent);
+        console.log(e.type, e.key);
+        calculatorLogic(e.key);
     });
 }
 
