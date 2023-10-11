@@ -331,6 +331,7 @@ function calculatorLogic(userInput) {
 
     } else if (userInput == "%") {
 
+        // Clears display
         opsDisplay.innerHTML = '';
 
         // If user presses '%' key after pressing '=', it will take the runningTotal and convert to its percentage value.
